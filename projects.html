@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Ilgaz Uygur</title>
+  <meta name="description" content="Selected CS projects by Ilgaz Uygur." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;background:
+      radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
+      radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
+      var(--bg);color:var(--text)}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:.92}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow)}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(11,13,16,.65);border-bottom:1px solid rgba(124,196,255,.15);z-index:10}
+    .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
+    .brand{font-weight:700} .spacer{flex:1}
+    .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
+    .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
+    main{max-width:var(--maxw);margin:0 auto;padding:24px}
+    h1{margin:8px 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pad{padding:22px}
+    .kicker{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+    .title{font-weight:700}
+    .meta{font-size:13px;color:var(--muted)}
+    @media (max-width:920px){.grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">Ilgaz Uygur • CS Portfolio</div>
+      <div class="spacer"></div>
+      <div class="tabs" role="tablist">
+        <a href="index.html" role="tab">Home</a>
+        <a href="projects.html" role="tab" aria-current="page" class="active">Projects</a>
+        <a href="big-ideas.html" role="tab">Big Ideas</a>
+        <a href="documentation.html" role="tab">Documentation</a>
+      </div>
+      <a class="tabs" href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Projects</h1>
+    <p class="kicker">Selected work with brief descriptions and links</p>
+
+    <section class="grid" aria-label="project list">
+      <article class="card pad">
+        <div class="kicker">Python</div>
+        <div class="title">Rock–Paper–Scissors (CLI)</div>
+        <p>A simple game featuring input validation, randomization, and a replay loop. Good example of clean functions and guard clauses.</p>
+        <div class="meta">Concepts: functions • loops • randomness • error handling</div>
+        <p><a href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">Source ↗</a></p>
+      </article>
+
+      <article class="card pad">
+        <div class="kicker">Java</div>
+        <div class="title">Binary Converter</div>
+        <p>Converts between decimal and binary with step-by-step output for learning. Includes unit tests and edge-case handling.</p>
+        <div class="meta">Concepts: arrays • loops • test cases • I/O</div>
+        <p><a href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">Source ↗</a></p>
+      </article>
+
+      <article class="card pad">
+        <div class="kicker">Swift</div>
+        <div class="title">Pizza Slice Distribution</div>
+        <p>Mini app exploring conditionals and integer division for fair slice sharing. Currently under active debugging; see notes in Documentation.</p>
+        <div class="meta">Concepts: conditionals • logic • off-by-one • debugging</div>
+        <p><a href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">Source ↗</a></p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
