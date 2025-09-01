@@ -5,83 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Documentation — Ilgaz Uygur</title>
   <meta name="description" content="Build notes and resources used by Ilgaz Uygur." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;background:
-      radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
-      radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
-      var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none} a:hover{opacity:.92}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow)}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);
-      background:rgba(11,13,16,.65);border-bottom:1px solid rgba(124,196,255,.15);z-index:10}
-    .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
-    .brand{font-weight:700} .spacer{flex:1}
-    .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
-    .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
-    main{max-width:var(--maxw);margin:0 auto;padding:24px}
-    h1{margin:8px 0 18px}
-    .pad{padding:22px} .kicker{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}}
-    ul.tight{margin:.3rem 0 .8rem 1.2rem}
-    li+li{margin-top:.25rem}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <nav class="nav" aria-label="Primary">
-      <div class="brand">Ilgaz Uygur • CS Portfolio</div>
+    <nav class="nav">
+      <div class="brand">Ilgaz Uygur</div>
       <div class="spacer"></div>
-      <div class="tabs" role="tablist">
-        <a href="index.html" role="tab">Home</a>
-        <a href="projects.html" role="tab">Projects</a>
-        <a href="big-ideas.html" role="tab">Big Ideas</a>
-        <a href="documentation.html" role="tab" aria-current="page" class="active">Documentation</a>
+      <div class="tabs">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="big-ideas.html">Big Ideas</a>
+        <a href="documentation.html" class="active">Documentation</a>
       </div>
-      <a class="tabs" href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
     </nav>
   </header>
 
   <main>
     <h1>Documentation</h1>
-    <p class="kicker">Build notes & resources I used</p>
+    <h2>Website Setup (GitHub Pages)</h2>
+    <ul>
+      <li>Repository name: <code>ilgazuygur.github.io</code></li>
+      <li><a href="https://youtu.be/o5g-lUuFgpg?si=S-SpA2xDSxnbhf9F" target="_blank">YouTube Tutorial 1</a></li>
+      <li><a href="https://youtu.be/rCt9DatF63I?si=BBbPdYOl2Hje-F-c" target="_blank">YouTube Tutorial 2</a></li>
+    </ul>
 
-    <section class="grid">
-      <article class="card pad">
-        <h2>Site Setup (GitHub Pages)</h2>
-        <p>Bu siteyi GitHub Pages ile kurdum. Aşağıdaki adımları ve videoları kullandım:</p>
-        <ul class="tight">
-          <li>Repo adı: <code>ilgazuygur.github.io</code> (special repo)</li>
-          <li><a href="https://youtu.be/o5g-lUuFgpg?si=S-SpA2xDSxnbhf9F" target="_blank" rel="noreferrer noopener">YouTube: GitHub Pages kurulum rehberi 1 ↗</a></li>
-          <li><a href="https://youtu.be/rCt9DatF63I?si=BBbPdYOl2Hje-F-c" target="_blank" rel="noreferrer noopener">YouTube: GitHub Pages kurulum rehberi 2 ↗</a></li>
-        </ul>
-        <p>Not: Değişiklikleri <strong>main</strong> branch’e pushladıktan sonra birkaç dakika içinde site yenilenir.</p>
-      </article>
-
-      <article class="card pad">
-        <h2>AP CSA (College Board) Video Links</h2>
-        <p>AP Computer Science A çalışırken kullandığım resmi kaynaklar:</p>
-        <ul class="tight">
-          <li><a href="https://apclassroom.collegeboard.org" target="_blank" rel="noreferrer noopener">AP Classroom — AP Daily: Computer Science A (Giriş gerekli) ↗</a></li>
-          <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a" target="_blank" rel="noreferrer noopener">AP Central — AP Computer Science A Course ↗</a></li>
-          <li><a href="https://www.youtube.com/@advancedplacement/playlists" target="_blank" rel="noreferrer noopener">Advanced Placement YouTube — AP CSA ilgili playlist’ler ↗</a></li>
-        </ul>
-        <p>Okul hesabınla AP Classroom’a giriş yaparak AP Daily videolarını izleyebilirsin.</p>
-      </article>
-    </section>
-
-    <section class="card pad" style="margin-top:16px">
-      <h2>Changelog</h2>
-      <ul class="tight">
-        <li><strong>v1.0</strong> — Initial pages created (Home, Projects, Big Ideas, Documentation)</li>
-      </ul>
-    </section>
+    <h2>AP CSA Resources</h2>
+    <ul>
+      <li><a href="https://apclassroom.collegeboard.org" target="_blank">AP Classroom — AP CSA</a></li>
+      <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-a" target="_blank">AP Central — AP CSA Course</a></li>
+      <li><a href="https://www.youtube.com/@advancedplacement/playlists" target="_blank">AP YouTube Playlists</a></li>
+    </ul>
   </main>
 </body>
 </html>
