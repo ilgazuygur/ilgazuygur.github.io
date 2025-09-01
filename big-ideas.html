@@ -4,100 +4,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Big Ideas — Ilgaz Uygur</title>
-  <meta name="description" content="Core CS principles Ilgaz is learning and applying." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;background:
-      radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
-      radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
-      var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none} a:hover{opacity:.92}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow)}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);
-      background:rgba(11,13,16,.65);border-bottom:1px solid rgba(124,196,255,.15);z-index:10}
-    .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
-    .brand{font-weight:700} .spacer{flex:1}
-    .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
-    .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
-    main{max-width:var(--maxw);margin:0 auto;padding:24px}
-    h1{margin:8px 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .pad{padding:22px}
-    .kicker{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    .idea h3{margin:.2rem 0 .4rem}
-    .idea ul{margin:.2rem 0 0 1.1rem}
-    @media (max-width:920px){.grid{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Big Ideas page" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <nav class="nav" aria-label="Primary">
-      <div class="brand">Ilgaz Uygur • CS Portfolio</div>
+    <nav class="nav">
+      <div class="brand">Ilgaz Uygur</div>
       <div class="spacer"></div>
-      <div class="tabs" role="tablist">
-        <a href="index.html" role="tab">Home</a>
-        <a href="projects.html" role="tab">Projects</a>
-        <a href="big-ideas.html" role="tab" aria-current="page" class="active">Big Ideas</a>
-        <a href="documentation.html" role="tab">Documentation</a>
+      <div class="tabs">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="big-ideas.html" class="active">Big Ideas</a>
+        <a href="documentation.html">Documentation</a>
       </div>
-      <a class="tabs" href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
     </nav>
   </header>
-
   <main>
     <h1>Big Ideas</h1>
-    <p class="kicker">Core CS principles and what I’m learning from them</p>
-
-    <section class="grid" aria-label="big ideas">
-      <article class="card pad idea">
-        <div class="kicker">Abstraction</div>
-        <h3>Hide complexity, expose power</h3>
-        <p>From functions and classes to APIs, abstraction lets me build on reliable layers without re-inventing the wheel.</p>
-        <ul>
-          <li>Top-down design with clear interfaces</li>
-          <li>Decompose problems into testable units</li>
-          <li>Refactor to remove duplication</li>
-        </ul>
-      </article>
-
-      <article class="card pad idea">
-        <div class="kicker">Algorithms</div>
-        <h3>Step-by-step solutions</h3>
-        <p>I compare solutions by correctness, readability, and efficiency, using big-O as a guide—not a religion.</p>
-        <ul>
-          <li>Trace with sample inputs</li>
-          <li>Measure time/space tradeoffs</li>
-          <li>Prefer clarity, then optimize</li>
-        </ul>
-      </article>
-
-      <article class="card pad idea">
-        <div class="kicker">Data & Visualization</div>
-        <h3>From numbers to insights</h3>
-        <p>Use the right data types, validate inputs, and visualize trends to support decisions. Test edge cases.</p>
-        <ul>
-          <li>Lists, dictionaries/maps, classes</li>
-          <li>Input validation & error handling</li>
-          <li>Charts for exploratory analysis</li>
-        </ul>
-      </article>
-
-      <article class="card pad idea">
-        <div class="kicker">The Internet</div>
-        <h3>How the web moves bytes</h3>
-        <p>Understanding DNS, HTTP, and Git/GitHub helps me deploy confidently and collaborate with version control.</p>
-        <ul>
-          <li>Requests/responses, status codes</li>
-          <li>Static hosting with GitHub Pages</li>
-          <li>Semantic HTML & accessible UI</li>
-        </ul>
-      </article>
-    </section>
+    <p>Content will be added here later.</p>
   </main>
 </body>
 </html>
