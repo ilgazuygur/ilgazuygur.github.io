@@ -5,24 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Ilgaz Uygur</title>
   <meta name="description" content="Projects page" />
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:
+      radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
+      radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
+      var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none}a:hover{opacity:.9}
+    header{position:sticky;top:0;background:rgba(11,13,16,.65);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,196,255,.15)}
+    .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
+    .brand{font-weight:700}.spacer{flex:1}
+    .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
+    .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
+    main{max-width:var(--maxw);margin:auto;padding:24px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="brand">Ilgaz Uygur</div>
-      <div class="spacer"></div>
-      <div class="tabs">
-        <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="big-ideas.html">Big Ideas</a>
-        <a href="documentation.html">Documentation</a>
-      </div>
-    </nav>
-  </header>
-  <main>
+<header>
+  <nav class="nav">
+    <div class="brand">Ilgaz Uygur</div>
+    <div class="spacer"></div>
+    <div class="tabs">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="big-ideas.html">Big Ideas</a>
+      <a href="documentation.html">Documentation</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="card">
     <h1>Projects</h1>
-    <p>Content will be added here later.</p>
-  </main>
+    <p>New stuff will be added here.</p>
+  </div>
+</main>
 </body>
 </html>
