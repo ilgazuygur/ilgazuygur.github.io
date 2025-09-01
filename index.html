@@ -4,83 +4,78 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ilgaz Uygur — Home</title>
-  <meta name="description" content="Ilgaz Uygur's website: Home, Projects, Big Ideas, Documentation." />
+  <meta name="description" content="Ilgaz Uygur's personal website." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--accent2:#8affc1;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;background:
+    :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:
       radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
       radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
-      var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none} a:hover{opacity:.92}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow)}
-    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);
-      background:rgba(11,13,16,.65);border-bottom:1px solid rgba(124,196,255,.15);z-index:10}
+      var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none}a:hover{opacity:.9}
+    header{position:sticky;top:0;background:rgba(11,13,16,.65);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,196,255,.15)}
     .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
-    .brand{font-weight:700} .spacer{flex:1}
+    .brand{font-weight:700}.spacer{flex:1}
     .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
     .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
-    main{max-width:var(--maxw);margin:0 auto;padding:24px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;margin-top:18px}
-    .pad{padding:28px} h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:0 0 10px}
+    main{max-width:var(--maxw);margin:auto;padding:24px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    h1{font-size:clamp(28px,4vw,44px);margin:0 0 10px}
     .lead{color:var(--muted);font-size:clamp(14px,2.2vw,18px)}
     .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-    .badge{border:1px solid rgba(138,255,193,.35);color:#d9fff0;background:rgba(138,255,193,.08);
-      padding:6px 10px;border-radius:999px;font-size:13px}
+    .badge{border:1px solid rgba(138,255,193,.35);color:#d9fff0;background:rgba(138,255,193,.08);padding:6px 10px;border-radius:999px;font-size:13px}
     .kicker{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    footer{max-width:var(--maxw);margin:40px auto;padding:24px;color:var(--muted);
-      display:flex;justify-content:space-between;align-items:center}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}}
+    footer{max-width:var(--maxw);margin:40px auto;padding:24px;color:var(--muted);display:flex;justify-content:space-between}
+    @media(max-width:920px){.hero{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav" aria-label="Primary">
-      <div class="brand">Ilgaz Uygur</div>
-      <div class="spacer"></div>
-      <div class="tabs" role="tablist">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="big-ideas.html">Big Ideas</a>
-        <a href="documentation.html">Documentation</a>
+<header>
+  <nav class="nav">
+    <div class="brand">Ilgaz Uygur</div>
+    <div class="spacer"></div>
+    <div class="tabs">
+      <a href="index.html" class="active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="big-ideas.html">Big Ideas</a>
+      <a href="documentation.html">Documentation</a>
+    </div>
+    <a class="tabs" href="https://github.com/ilgazuygur" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="card">
+      <h1>Hello, I’m Ilgaz — 11th grade student at Hisar Okulları.</h1>
+      <p class="lead">I’m currently taking <strong>AP Computer Science A (CSA)</strong>. I enjoy coding with <strong>Python</strong>, <strong>Java</strong>, and <strong>Swift</strong>. This website is where I’ll share my classwork, notes, and progress as I grow as a CS student.</p>
+      <div class="badges">
+        <span class="badge">AP CSA</span>
+        <span class="badge">Python</span>
+        <span class="badge">Java</span>
+        <span class="badge">Swift</span>
       </div>
-      <a class="tabs" href="https://github.com/ilgazuygur" target="_blank" rel="noreferrer noopener">GitHub ↗</a>
-    </nav>
-  </header>
+    </div>
+    <aside class="card">
+      <div class="kicker">Quick Facts</div>
+      <ul>
+        <li>Course focus: <strong>AP Computer Science A</strong></li>
+        <li>Interests: <strong>Computer Science</strong> & <strong>Math</strong></li>
+        <li>Goal this year: <strong>Score a 5 on AP CSA</strong> and improve coding skills</li>
+        <li>Email: <a href="mailto:ilgaz.uygur@hisarschool.k12.tr">ilgaz.uygur@hisarschool.k12.tr</a></li>
+      </ul>
+    </aside>
+  </section>
+</main>
 
-  <main>
-    <section class="hero">
-      <div class="card pad">
-        <h1>Hello, I’m Ilgaz — 11th grade student at Hisar Okulları.</h1>
-        <p class="lead">I’m currently taking <strong>AP Computer Science A (CSA)</strong>. I enjoy coding with <strong>Python</strong>, <strong>Java</strong>, and <strong>Swift</strong>. This website is where I’ll share my classwork, notes, and progress as I grow as a CS student.</p>
-        <div class="badges">
-          <span class="badge">AP CSA</span>
-          <span class="badge">Python</span>
-          <span class="badge">Java</span>
-          <span class="badge">Swift</span>
-          <span class="badge">HTML/CSS</span>
-        </div>
-      </div>
-      <aside class="card pad">
-        <div class="kicker">Quick Facts</div>
-        <ul>
-          <li>Course focus: <strong>AP Computer Science A</strong></li>
-          <li>Interests: <strong>Computer Science</strong> & <strong>Math</strong></li>
-          <li>Goal this year: <strong>Score a 5 on AP CSA</strong> and deepen my coding skills</li>
-          <li>Email: <a href="mailto:ilgaz.uygur@hisarschool.k12.tr">ilgaz.uygur@hisarschool.k12.tr</a></li>
-        </ul>
-      </aside>
-    </section>
-  </main>
+<footer>
+  <span>© <span id="y"></span> Ilgaz Uygur</span>
+</footer>
 
-  <footer>
-    <span>© <span id="y"></span> Ilgaz Uygur</span>
-  </footer>
-
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
