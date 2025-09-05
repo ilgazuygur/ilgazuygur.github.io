@@ -134,7 +134,7 @@ public class MyProgram
     <!-- Project 3 -->
     <div class="card">
       <h2>Project 3 — Rocket to the Stars (Java)</h2>
-      <p class="muted">User enters mass (kg), engine force (N), burn time (s). Prints acceleration, final velocity, and altitude in decimal and int, then draws a rocket.</p>
+      <p class="muted">User enters mass (kg), engine force (N), burn time (s). Prints acceleration, final velocity, and altitude.</p>
       <div class="code"><pre><code>import java.util.Scanner;
 public class RocketToTheStars {
     public static void main(String[] args){
@@ -149,10 +149,9 @@ public class RocketToTheStars {
         System.out.print("Enter burn time (s): ");
         double time = scanner.nextDouble();
 
-        // Net acceleration: a = F / m
         double a = force / mass;
-        double v = a * time; // Final velocity
-        double h = 0.5 * a * time * time; // Altitude
+        double v = a * time;
+        double h = 0.5 * a * time * time;
 
         System.out.println();
         System.out.println("Net acceleration (m/s^2): " + a);
@@ -199,13 +198,72 @@ public class SqrtNewtonThreeSteps {
 
         System.out.println("Approx sqrt(N) ≈ " + x3);
         System.out.println("Approx sqrt(N) (int) = " + (int)x3);
+    }
+}</code></pre></div>
+    </div>
 
-        System.out.println();
-        System.out.println("    /\\");
-        System.out.println("   /  \\");
-        System.out.println("  |====|");
-        System.out.println("  |STAR|");
-        System.out.println("   ||||");
+    <!-- Project 5 -->
+    <div class="card">
+      <h2>Project 5 — Princeton Java #25 Wind Chill</h2>
+      <p class="muted">Calculates wind chill from temperature and wind speed.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class WindChill {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the t value:");
+        double t = scanner.nextDouble();
+        System.out.println("Please enter the v value:");
+        double v = scanner.nextDouble();
+        double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
+        System.out.println("Temperature = " + t);
+        System.out.println("Wind speed  = " + v);
+        System.out.println("Wind chill  = " + w);
+    }
+}</code></pre></div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="card">
+      <h2>Project 6 — Princeton Java #26 Polar Coordinates</h2>
+      <p class="muted">Reads Cartesian (x,y) and converts to polar coordinates (r,θ).</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class PolarCoordinates {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter x value:");
+        double x = scanner.nextDouble();
+        System.out.println("Please enter y value:");
+        double y = scanner.nextDouble();
+
+        double r     = Math.sqrt(x*x + y*y);
+        double theta = Math.atan2(y, x);
+
+        System.out.println("r     = " + r);
+        System.out.println("theta = " + theta);
+    }
+}</code></pre></div>
+    </div>
+
+    <!-- Project 7 -->
+    <div class="card">
+      <h2>Project 7 — Princeton Java #29 Day of Week</h2>
+      <p class="muted">Uses Zeller’s congruence to compute the day of the week.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class DayOfWeek {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the day:");
+        int day = scanner.nextInt();
+        System.out.println("Please enter the month:");
+        int month = scanner.nextInt();
+        System.out.println("Please enter the year:");
+        int year = scanner.nextInt();
+        
+        int y0 = year - (14 - month) / 12;
+        int x = y0 + y0/4 - y0/100 + y0/400;
+        int m0 = month + 12 * ((14 - month) / 12) - 2;
+        int d0 = (day + x + (31*m0)/12) % 7;
+        System.out.println(d0);
     }
 }</code></pre></div>
     </div>
