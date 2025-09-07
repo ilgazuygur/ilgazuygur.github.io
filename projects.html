@@ -266,6 +266,87 @@ public class DayOfWeek {
     }
 }</code></pre></div>
     </div>
+
+    <!-- Project 8 -->
+    <div class="card">
+      <h2>Project 8 — Web Problem: Divisibility (Java)</h2>
+      <p class="muted">Checks if two integers are both divisible by 7; prints <code>True</code> if both are, otherwise <code>False</code>.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+      Scanner scanner = new Scanner(System.in);  
+      
+      System.out.println("Enter the first number");
+      int num1 = scanner.nextInt();
+      
+      System.out.println("Enter the second number");
+      int num2 = scanner.nextInt();
+      
+      if ((num1 % 7 == 0) &amp;&amp; (num2 % 7 == 0)){
+          System.out.println("True"); 
+      } else {
+          System.out.println("False");
+      }
+    }
+}</code></pre></div>
+    </div>
+
+    <!-- Project 9 -->
+    <div class="card">
+      <h2>Project 9 — Web Exercise: Swap (Java)</h2>
+      <p class="muted">Reads two integers, swaps their values using a temporary variable, and prints the updated numbers.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+     Scanner scanner = new Scanner(System.in);
+     
+     System.out.println("Enter the first number:");
+     int num1 = scanner.nextInt();
+     
+     System.out.println("Enter the second number:");
+     int num2 = scanner.nextInt();
+     
+     int temp = 0;
+     
+     temp = num1;
+     num1 = num2;
+     num2 = temp;
+     
+     System.out.println("Updated First number is :" + num1);
+     System.out.println("Updated Second number is : " + num2);
+    }
+}</code></pre></div>
+    </div>
+
+    <!-- Project 10 -->
+    <div class="card">
+      <h2>Project 10 — Web Exercise: Ordered (Java)</h2>
+      <p class="muted">Reads three integers and prints <code>True</code> if the middle number is between the other two; otherwise <code>False</code>.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+     Scanner scanner = new Scanner(System.in);
+     
+     System.out.println("Enter 3 numbers:");
+     int x = scanner.nextInt();
+     int y = scanner.nextInt();
+     int z = scanner.nextInt();
+     
+     if (((x>=y) &amp;&amp; (y>=z)) || ((z>=y) &amp;&amp; (y>=x))){
+         System.out.println("True");
+     }else{
+         System.out.println("False");
+     }
+    }
+}</code></pre></div>
+    </div>
+
   </div>
 </main>
 </body>
