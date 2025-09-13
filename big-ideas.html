@@ -1,5 +1,5 @@
 <!-- =========================
-File: big-ideas.html (Updated with AP CSA 1.1–1.9 notes)
+File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2)
 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +29,7 @@ File: big-ideas.html (Updated with AP CSA 1.1–1.9 notes)
     h1,h2{margin-top:0}
     ul{margin:0 0 0 1rem}
     code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:8px}
+    pre{background:rgba(255,255,255,.06);padding:12px;border-radius:12px;overflow:auto}
   </style>
 </head>
 <body>
@@ -48,9 +49,10 @@ File: big-ideas.html (Updated with AP CSA 1.1–1.9 notes)
 <main>
   <div class="card">
     <h1>Big Ideas</h1>
-    <p>Key notes from AP CSA Unit 1.1–1.9</p>
+    <p>Key notes from AP CSA Unit 1.1–1.20 (curated &amp; includes all provided summaries)</p>
   </div>
 
+  <!-- Core 1.1–1.9 notes (kept concise) -->
   <div class="card">
     <h2>1.1 – Why Programming?</h2>
     <ul>
@@ -74,76 +76,318 @@ File: big-ideas.html (Updated with AP CSA 1.1–1.9 notes)
   </div>
 
   <div class="card">
-    <h2>1.3 – Printing in Java</h2>
+    <h2>1.3 – Printing in Java &amp; Literals</h2>
     <ul>
-      <li><code>System.out.print()</code>: prints without a new line.</li>
-      <li><code>System.out.println()</code>: prints and moves to the next line.</li>
-      <li>Concatenation: <code>+</code> joins strings, e.g. <code>"Age: " + 16</code>.</li>
-      <li>Escape sequences: <code>\n</code> (new line), <code>\t</code> (tab), <code>\"</code> (quote).</li>
+      <li><code>System.out.print()</code> vs <code>System.out.println()</code></li>
+      <li>Concatenation with <code>+</code>, escape sequences: <code>\n</code>, <code>\t</code>, <code>\"</code></li>
     </ul>
   </div>
 
   <div class="card">
     <h2>1.4 – Comments</h2>
     <ul>
-      <li>Single-line comments: <code>// text</code>.</li>
-      <li>Multi-line comments: <code>/* text */</code>.</li>
-      <li>Documentation comments for Javadoc: <code>/** ... */</code>.</li>
-      <li>Comments explain purpose, not just what code does. Keep them updated.</li>
+      <li>Single-line: <code>//</code> • Multi-line: <code>/* ... */</code> • Javadoc: <code>/** ... */</code></li>
+      <li>Explain purpose; keep up to date.</li>
     </ul>
   </div>
-
-  <!-- NEW SECTIONS: 1.5–1.9 -->
 
   <div class="card">
     <h2>1.5 – Variables &amp; Data Types</h2>
     <ul>
-      <li>Primitive types (AP scope): <code>int</code>, <code>double</code>, <code>boolean</code>; reference: <code>String</code>.</li>
-      <li>Declare &amp; initialize: <code>int count = 0;</code> <code>double gpa = 3.7;</code> <code>boolean passed = true;</code></li>
-      <li>Identifiers: start with a letter, no spaces, use <em>camelCase</em>.</li>
-      <li>Constants: <code>final double TAX_RATE = 0.18;</code> (cannot be reassigned).</li>
+      <li>Primitives: <code>int</code>, <code>double</code>, <code>boolean</code>; Reference: <code>String</code>.</li>
+      <li>Declare/init &amp; constants with <code>final</code>.</li>
+      <li>Integer bounds via <code>Integer.MIN_VALUE</code>/<code>MAX_VALUE</code>.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>1.6 – Operators &amp; Expressions</h2>
+    <h2>1.6 – Operators, Expressions &amp; Casting</h2>
     <ul>
-      <li>Arithmetic: <code>+ - * / %</code> (modulo).</li>
-      <li>Integer division truncates: <code>7/2</code> ⇒ <code>3</code>; use casting for real division.</li>
-      <li>Precedence: <code>()</code> → <code>* / %</code> → <code>+ -</code>. Use parentheses for clarity.</li>
-      <li>Casting: <code>(double)7/2</code> ⇒ <code>3.5</code>; narrowing casts may lose data.</li>
-      <li>Compound: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>.</li>
+      <li>Arithmetic <code>+ - * / %</code>, precedence, integer division truncation.</li>
+      <li>Casting &amp; round-off considerations.</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>1.7 – User Input with <code>Scanner</code></h2>
     <ul>
-      <li><code>import java.util.Scanner;</code> → <code>Scanner in = new Scanner(System.in);</code></li>
-      <li>Read: <code>in.nextInt()</code>, <code>in.nextDouble()</code>, <code>in.next()</code>, <code>in.nextLine()</code>.</li>
-      <li>Newline pitfall: call an extra <code>in.nextLine()</code> after numeric input before reading a full line.</li>
-      <li>Always close when done in larger apps: <code>in.close()</code> (avoid closing <code>System.in</code> if you’ll reuse it).</li>
+      <li><code>nextInt</code>, <code>nextDouble</code>, <code>next</code>, <code>nextLine</code>, newline gotcha.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h2>1.8 – The <code>Math</code> Class</h2>
+    <h2>1.8 – The <code>Math</code> Class (Basics)</h2>
     <ul>
-      <li>Static methods: <code>Math.abs(x)</code>, <code>Math.pow(a,b)</code>, <code>Math.sqrt(x)</code>, <code>Math.max(a,b)</code>, <code>Math.min(a,b)</code>.</li>
-      <li>Constants: <code>Math.PI</code>, <code>Math.E</code>.</li>
-      <li>Random: <code>Math.random()</code> in <code>[0.0,1.0)</code>; example die roll: <code>int die = (int)(Math.random()*6)+1;</code></li>
+      <li><code>abs</code>, <code>pow</code>, <code>sqrt</code>, <code>max</code>, <code>min</code>, <code>random</code>; <code>PI</code>, <code>E</code>.</li>
     </ul>
   </div>
 
   <div class="card">
     <h2>1.9 – Errors &amp; Debugging</h2>
     <ul>
-      <li>Syntax errors: caught by the compiler (e.g., missing <code>;</code>).</li>
-      <li>Runtime errors: occur while running (e.g., division by zero, input mismatch).</li>
-      <li>Logic errors: code runs but gives wrong results—use test cases &amp; tracing.</li>
-      <li>Tips: incremental builds, frequent tests, meaningful names, updated comments.</li>
+      <li>Syntax vs runtime vs logic errors; use stack traces &amp; incremental testing.</li>
     </ul>
   </div>
+
+  <!-- All provided summaries (as given, not rewritten) -->
+
+  <div class="card">
+    <h2>1.1.10 Summary</h2>
+    <ul>
+      <li><strong>Algorithm:</strong> Adım adım süreç tanımıdır, diyagram ya da yazıyla ifade edilebilir.</li>
+      <li><strong>Sequencing:</strong> İşlemler sıralı yapılır.</li>
+      <li><strong>IDE:</strong> Kod yazma, derleme ve çalıştırma ortamıdır.</li>
+      <li><strong>Java Program Yapısı:</strong> <code>public class ClassName</code> ve <code>public static void main(String[] args)</code> ile başlar.</li>
+      <li><code>System.out.println()</code> çıktıyı ekrana yazdırır.</li>
+      <li><code>;</code> satır sonu, <code>{}</code> kod blokları için, <code>//</code> ve <code>/* */</code> yorumlar için kullanılır.</li>
+      <li><strong>Compiler:</strong> Kodu .class dosyasına çevirir; syntax errors (dilbilgisi hataları) derleme aşamasında tespit edilir.</li>
+      <li><strong>Logic errors:</strong> Kod çalışır ama yanlış sonuç verir; testle bulunur.</li>
+      <li><strong>Run-time errors:</strong> Çalışma anında oluşur, exceptions program akışını keser.</li>
+    </ul>
+    <pre><code>public class MyClass
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hi there!");
+    }
+}</code></pre>
+  </div>
+
+  <div class="card">
+    <h2>1.2.7 Summary</h2>
+    <ul>
+      <li>(AP 1.2.B.2) A variable is a memory storage location that holds a value, which can change while the program is running.</li>
+      <li>(AP 1.2.B.2) Every variable has a name and an associated data type that determines the kind of data it can hold. A variable of a primitive type holds a primitive value from that type.</li>
+    </ul>
+    <pre><code>int score;
+double gpa = 3.5;</code></pre>
+    <ul>
+      <li>(AP 1.2.A.1) A data type is a set of values and a corresponding set of operations on those values. Data types can be primitive types (like int) or reference types (like String).</li>
+      <li>(AP 1.2.A.2) The primitive data types used in this course define the set of values and corresponding operations on those values for numbers and Boolean values.</li>
+      <li>(AP 1.2.A.3) A reference type, like String, is used to define objects that are not primitive types.</li>
+      <li>(AP 1.2.B.1) The three primitive data types used in this course are int (integer numbers), double (decimal numbers), and boolean (true or false).</li>
+      <li>String is a reference data type representing a sequence of characters.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.3.6 Summary</h2>
+    <ul>
+      <li>(AP 1.3.A.1) System.out.print and System.out.println are Java output statements that display information on the computer screen. System.out.println moves the cursor to a new line after the information has been displayed, while System.out.print does not.</li>
+      <li>(AP 1.3.B.1) A literal is the code representation of a fixed value, which can be a string or a numerical value.</li>
+      <li>(AP 1.3.B.2) A string literal is a sequence of zero to many characters enclosed in starting and ending double quotes.</li>
+      <li>(AP 1.3.B.3) Escape sequences are special sequences of characters that can be included in a string. They start with a backslash \ and have a special meaning in Java. Escape sequences used in this course include double quote ", backslash \, and newline\n.</li>
+      <li>(AP 1.3.C.1) Arithmetic expressions, which consist of numeric values, variables, and operators, include expressions of type int and double.</li>
+      <li>(AP 1.3.C.2) The arithmetic operators consist of +, -, * , /, and % also known as addition, subtraction, multiplication, division, and remainder.</li>
+      <li>(AP 1.3.C.2) An arithmetic operation that uses two int values will evaluate to an int value. With integer division, any decimal part in the result will be thrown away.</li>
+      <li>(AP 1.3.C.2) An arithmetic operation that uses at least one double value will evaluate to a double value.</li>
+      <li>(AP 1.3.C.3) When dividing numeric values that are both int values, the result is only the integer portion of the quotient. Anything after the decimal point is thrown away. When dividing numeric values that use at least one double value, the result is the double quotient as expected.</li>
+      <li>(AP 1.3.C.4) The remainder (modulo) operator % is used to compute the remainder when one number is divided by another number.</li>
+      <li>(AP 1.3.C.5) Multiple operators can be used to combine expressions into compound expressions.</li>
+      <li>(AP 1.3.C.5) During evaluation, numeric values are associated with operators according to operator precedence to determine how they are grouped. *, /, % have precedence over + and -, unless parentheses are used to group those to be evaluated first. Operators with the same precedence are evaluated from left to right.</li>
+      <li>(AP 1.3.C.6) An attempt to divide an integer by zero will result in an ArithmeticException.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.5.6 Summary</h2>
+    <ul>
+      <li>Type casting is used to convert a value from one type to another.</li>
+      <li>(AP 1.5.A.1) The casting operators (int) and (double) can be used to convert from a double value to an int value (or vice versa).</li>
+      <li>(AP 1.5.A.2) Casting a double value to an int causes the digits to the right of the decimal point to be truncated (cut off and thrown away).</li>
+      <li>(AP 1.5.A.3) Some code causes int values to be automatically cast (widened) to double values. In expressions involving doubles, the double values are contagious, causing ints in the expression to be automatically converted (“widened”) to the equivalent double value so the result of the expression can be computed as a double.</li>
+      <li>(AP 1.5.A.4) Values of type double can be rounded to the nearest integer by (int)(x + 0.5) or (int)(x – 0.5) for negative numbers.</li>
+      <li>(AP 1.5.B.1) The constant Integer.MAX_VALUE holds the value of the largest possible int value. The constant Integer.MIN_VALUE holds the value of the smallest possible int value.</li>
+      <li>(AP 1.5.B.2) Integer values in Java are represented by values of type int, which are stored using a finite amount (4 bytes) of memory. Therefore, an int value must be in the range from Integer.MIN_VALUE to Integer.MAX_VALUE, inclusive.</li>
+      <li>(AP 1.5.B.3) If an expression would evaluate to an int value outside of the allowed range, an integer overflow occurs. The result is an int value in the allowed range but not necessarily the value expected.</li>
+      <li>(AP 1.5.C.1) Computers allot a specified amount of memory to store data based on the data type. If an expression would evaluate to a double that is more precise than can be stored in the allotted amount of memory, a round-off error occurs. The result will be rounded to the representable value. To avoid rounding errors that naturally occur, use int values or round doubles to the precision needed.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.7.4 Summary</h2>
+    <ul>
+      <li>(AP 1.7.A.1) Libraries are collections of classes written by other programmers.</li>
+      <li>(AP 1.7.A.1) An Application Programming Interface (API) specification informs the programmer how to use classes in a library.</li>
+      <li>(AP 1.7.A.1) Documentation found in API specifications and libraries is essential to understanding the attributes and behaviors of a class defined by the API.</li>
+      <li>(AP 1.7.A.1) Classes in the APIs and libraries are grouped into packages that can be imported into a program.</li>
+      <li>(AP 1.7.A.1) A class defines a specific reference type and is the building block of object-oriented programming. Existing classes and class libraries can be utilized to create objects.</li>
+      <li>(AP 1.7.A.2) Attributes refer to the data related to the class and are stored in variables.</li>
+      <li>(AP 1.7.A.2) Behaviors refer to what instances of the class can do (or what can be done with them) and are defined by methods.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.8.6 Summary</h2>
+    <ul>
+      <li>(AP 1.8.A.1) Comments are written for both the original programmer and other programmers to understand the code and its functionality, but are ignored by the compiler and are not executed when the program is run.</li>
+      <li>(AP 1.8.A.1) Three types of comments in Java include /* /, which generates a block of comments, //, which generates a comment on one line, and /* */, which are Javadoc comments and are used to create API documentation.</li>
+      <li>(AP 1.8.A.2) A precondition is a condition that must be true just prior to the execution of a section of program code in order for the method to behave as expected. There is no expectation that the method will check to ensure preconditions are satisfied.</li>
+      <li>(AP 1.8.A.3) A postcondition is a condition that must always be true after the execution of a section of program code. Postconditions describe the outcome of the execution in terms of what is being returned or the current value of the attributes of an object.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.9 Summary</h2>
+    <ul>
+      <li>Method: Adlandırılmış kod bloğu, çağrıldığında çalışır.</li>
+      <li>Procedural abstraction: Metodu içini bilmeden kullanma.</li>
+      <li>Parameter: Metot başlığındaki değişken.</li>
+      <li>Argument: Çağırırken verilen değer.</li>
+      <li>Call by value: Argüman kopyası ile çalışır.</li>
+      <li>Overloading: Aynı isim, farklı parametre listesi.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.10.5 Summary</h2>
+    <ul>
+      <li>(AP 1.10.A.1) Class methods are associated with the class (not instances of the class which we will see in later lessons).</li>
+      <li>(AP 1.10.A.2) Class methods include the keyword static in the header before the method name.</li>
+      <li>(AP 1.9.B.1) A void method does not have a return value and is therefore not called as part of an expression.</li>
+      <li>(AP 1.9.B.2) A non-void method returns a value that is the same type as the return type in the header.</li>
+      <li>(AP 1.9.B.2) To use the return value when calling a non-void method, it must be stored in a variable or used as part of an expression.</li>
+      <li>Common errors with methods are mismatches in the order or type of arguments, return values, and forgetting to do something with the value returned from a method. When you call a method that returns a value, you should do something with that value like assigning it to a variable or printing it out.</li>
+      <li>(AP 1.10.A.2) Class methods are typically called using the class name along with the dot operator. When the method call occurs in the defining class, the use of the class name is optional in the call.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.11.4 Summary</h2>
+    <ul>
+      <li>(AP 1.11.A.1) The Math class is part of the java.lang package. Classes in the java.lang package are available by default.</li>
+      <li>(AP 1.11.A.2) The Math class contains only class (static) methods. They can be called using Math.method(); for each method.</li>
+      <li>(AP 1.11.A.2) The following static Math methods are part of the Java Quick Reference:
+        <ul>
+          <li>int abs(int)</li>
+          <li>double abs(double)</li>
+          <li>double pow(double, double)</li>
+          <li>double sqrt(double)</li>
+          <li>double random()</li>
+        </ul>
+      </li>
+      <li>(AP 1.11.A.3) The values returned from Math.random() can be manipulated to produce a random int or double in a defined range. <code>(int)(Math.random() * range) + min</code> (range = max - min + 1).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.12.8 Summary</h2>
+    <ul>
+      <li>(AP 1.12.A.1) A class defines a new data type (a classification). It is the formal implementation, or blueprint, of the attributes and behaviors of the objects of that class.</li>
+      <li>(AP 1.12.A.1) An object is a specific instance of a class with defined attributes. Objects are declared as variables of a class type.</li>
+      <li>(AP 1.12.B.1) A variable of a reference type holds an object reference, which can be thought of as the memory address of that object.</li>
+      <li>An attribute or instance variable is data the object knows about itself. For example a turtle object knows the direction it is facing or its color.</li>
+      <li>A behavior or method is something that an object can do. For example a turtle object can go forward 100 pixels.</li>
+      <li>(AP 1.12.A.2) A class hierarchy … inheritance relationship … (outside the AP CSA exam scope).</li>
+      <li>(AP 1.12.A.2) All classes in Java are subclasses of the Object class.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.13.7 Summary</h2>
+    <ul>
+      <li>(AP 1.13.A.1) A class contains constructors that are called with the keyword new to create objects and initialize its attributes.</li>
+      <li>(AP 1.13.A.1) Constructors have the same name as the class.</li>
+      <li>(AP 1.13.C.1) new ClassName() creates a new object and calls a constructor.</li>
+      <li>(AP 1.13.B.1) The new object is saved in a variable of a reference type (or null).</li>
+      <li>(AP 1.13.A.2) Constructor signature = name + ordered parameter types; parameter list has types & names.</li>
+      <li>(AP 1.13.A.3) Overloaded constructors differ by number/type/order.</li>
+      <li>No-argument constructor: takes no arguments.</li>
+      <li>(AP 1.13.C.2) Parameters establish initial attribute values.</li>
+      <li>(AP 1.13.C.3) Arguments must be compatible with the signature; call by value (copies).</li>
+      <li>(AP 1.13.C.4) Constructor call interrupts flow, then returns to next statement.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.14.7 Summary</h2>
+    <ul>
+      <li>Instance methods define behavior; called on objects.</li>
+      <li>(AP 1.14.A.1) Use dot operator: <code>object.method()</code>.</li>
+      <li>(AP 1.14.A.2) Calling on null → <code>NullPointerException</code>.</li>
+      <li>Methods can take arguments; signature = name + parameter list (types & names).</li>
+      <li>Arguments must match number, order, type.</li>
+      <li>Method call interrupts sequential flow; resumes after method returns.</li>
+      <li>Non-void methods return values; use the returned value.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.15.9 Summary</h2>
+    <ul>
+      <li>(AP 1.15.A.1) A String object represents a sequence of characters and can be created by a string literal.</li>
+      <li>(AP 1.15.A.2) String is in <code>java.lang</code> (available by default). Create via literal or <code>new String(...)</code>.</li>
+      <li>(AP 1.15.A.3) String is immutable.</li>
+      <li>(AP 1.15.A.4) Concatenate with <code>+</code>/<code>+=</code>; primitives auto-convert.</li>
+      <li>(AP 1.15.A.5) Concatenating any object calls its <code>toString</code> (overriding details outside AP scope).</li>
+      <li><em>index</em>, <em>length</em>, <em>substring</em> basics; indices 0..length-1; out-of-range → <code>IndexOutOfBoundsException</code>.</li>
+      <li>AP Quick Reference:
+        <ul>
+          <li><code>String(String str)</code></li>
+          <li><code>int length()</code></li>
+          <li><code>String substring(int from, int to)</code></li>
+          <li><code>String substring(int from)</code></li>
+          <li><code>int indexOf(String str)</code></li>
+          <li><code>boolean equals(Object other)</code></li>
+          <li><code>int compareTo(String other)</code></li>
+        </ul>
+        <div>Note: <code>str.substring(index, index + 1)</code> returns a single character.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.16 – Unit Summary 1a (1.1–1.6)</h2>
+    <p>In this unit you learned about the three primitive data types on the exam: int, double, and boolean. You also learned how to declare (name) and change the value of variables. You learned about operators, casting, and integer constants for the min and max integer values.</p>
+    <h3 style="margin-top:14px">1.16.1 Concept Summary</h3>
+    <ul>
+      <li>Compiler - Software that translates the Java source code into the Java class file which can be run on the computer.</li>
+      <li>Compiler or syntax error - An error that is found during the compilation.</li>
+      <li>Main method - Where execution starts in a Java program.</li>
+      <li>Variable - A name associated with a memory location in the computer.</li>
+      <li>Declare a Variable - Specifying the type and name for a variable. This sets aside memory for a variable of that type and associates the name with that memory location.</li>
+      <li>Initializing a Variable - The first time you set the value of a variable.</li>
+      <li>data type - determines the size of memory reserved for a variable, for example int, double, boolean, String.</li>
+      <li>integer - a whole number like 2 or -3</li>
+      <li>boolean - An expression that is either true or false.</li>
+      <li>Camel case - One way to create a variable name by appending several words together and uppercasing the first letter of each word after the first word (myScore).</li>
+      <li>Casting a Variable - Changing the type of a variable using (type) name.</li>
+      <li>Operator - Common mathematical symbols such as + for addition and * for multiplication.</li>
+      <li>Compound assignment or shortcut operators - Operators like x++ which means x = x + 1 or x =y which means x = x * y.</li>
+      <li>remainder - The % operator which returns the remainder from one number divided by another.</li>
+      <li>arithmetic expression - a sequence of operands and operators that describe a calculation to be performed, for example 3(2 + x)</li>
+      <li>operator precedence - some operators are done before others, for example *, /, % have precedence over + and -, unless parentheses are used.</li>
+    </ul>
+    <h3 style="margin-top:14px">1.16.2 Java Keyword Summary</h3>
+    <ul>
+      <li>boolean, double, int, String</li>
+      <li>System.out.print(), System.out.println()</li>
+      <li>= (assignment), +, -, *, /, %</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>1.20 – Unit Summary 1b (1.7–1.15)</h2>
+    <p>In this unit, you learned to use objects (variables of a class type) that have been written for you in Java. You learned to use constructors and methods with and without parameters of objects, and built-in Java classes like String, Integer, Double, and Math.</p>
+    <h3 style="margin-top:14px">1.20.1 Concept Summary</h3>
+    <ul>
+      <li>class, object</li>
+      <li>constructors, new</li>
+      <li>instance variables (attributes), methods (behaviors)</li>
+      <li>dot (.) operator, parameters (arguments), return values</li>
+      <li>immutable strings; wrapper classes (Integer, Double)</li>
+    </ul>
+    <h3 style="margin-top:14px">1.20.2 Java Keyword Summary</h3>
+    <ul>
+      <li>new, null</li>
+      <li><strong>String Quick Ref:</strong> String(String), length(), substring(from,to), substring(from), indexOf(String), equals(Object), compareTo(String)</li>
+      <li><strong>Integer Quick Ref:</strong> Integer(value), Integer.MIN_VALUE, Integer.MAX_VALUE, intValue()</li>
+      <li><strong>Double Quick Ref:</strong> Double(double), doubleValue()</li>
+      <li><strong>Math Quick Ref:</strong> abs, pow, sqrt, random</li>
+      <li>Random range: <code>(int)(Math.random()*range) + min</code> where <code>range = max - min + 1</code>.</li>
+    </ul>
+  </div>
+
 </main>
 </body>
 </html>
