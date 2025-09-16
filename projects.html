@@ -338,13 +338,142 @@ public class MyProgram
      int y = scanner.nextInt();
      int z = scanner.nextInt();
      
-     if (((x>=y) &amp;&amp; (y>=z)) || ((z>=y) &amp;&amp; (y>=x))){
+     if (((x&gt;=y) &amp;&amp; (y&gt;=z)) || ((z&gt;=y) &amp;&amp; (y&gt;=x))){
          System.out.println("True");
      }else{
          System.out.println("False");
      }
     }
 }</code></pre></div>
+    </div>
+
+    <!-- Project 11 -->
+    <div class="card">
+      <h2>Project 11 — Pen &amp; Paper → Code: Grade Calculator (Java)</h2>
+      <p class="muted">
+        <strong>Pen &amp; Paper notes:</strong> I sketched the program on paper: read three integer scores (a, b, c), compute <em>total</em>, <em>average</em>, and then map the numeric average to a letter grade (A–F). While coding, make helper methods: <code>computeTotal</code>, <code>computeAverage</code>, and <code>letterGrade</code>. Remember Java methods must be inside the class, and average must use floating-point division.
+      </p>
+      <div class="code"><pre><code>import java.util.Scanner;
+
+public class MyProgram {
+    // 1) Total
+    public static int computeTotal(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // 2) Average (double division)
+    public static double computeAverage(int total) {
+        return total / 3.0; // use 3.0 (not 3) to avoid integer division
+    }
+
+    // 3) Letter grade
+    public static String letterGrade(double average) {
+        if (average &gt;= 90) {
+            return "A";
+        } else if (average &gt;= 80) {
+            return "B";
+        } else if (average &gt;= 70) {
+            return "C";
+        } else if (average &gt;= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+
+    // 4) Main: read, compute, print
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Please enter the value a: ");
+        int a = scanner.nextInt();
+
+        System.out.print("Please enter the value b: ");
+        int b = scanner.nextInt();
+
+        System.out.print("Please enter the value c: ");
+        int c = scanner.nextInt();
+
+        int total = computeTotal(a, b, c);
+        double average = computeAverage(total);
+        String grade = letterGrade(average);
+
+        System.out.println("Total   = " + total);
+        System.out.println("Average = " + average);
+        System.out.println("Letter  = " + grade);
+
+        scanner.close();
+    }
+}</code></pre></div>
+      <h3 style="margin-top:14px">Common pitfalls I fixed from the paper draft</h3>
+      <ul class="muted">
+        <li><strong>Methods must be inside the class:</strong> helpers like <code>computeTotal</code> cannot live outside <code>class MyProgram</code>.</li>
+        <li><strong>Use <em>static</em> helpers:</strong> because <code>main</code> is static, its helpers should be static too.</li>
+        <li><strong>Floating-point division:</strong> <code>total/3</code> is int-division; use <code>3.0</code> or cast to double.</li>
+        <li><strong>Proper if syntax:</strong> <code>if (average &gt;= 90)</code> not <code>if average &gt;= 90</code>; end statements with <code>;</code>.</li>
+        <li><strong>Call methods with assignment:</strong> write <code>double avg = computeAverage(total);</code>, not <code>computeAverage(int total);</code>.</li>
+      </ul>
+    </div>
+
+    <!-- Project 12 -->
+    <div class="card">
+      <h2>Project 12 — Pen &amp; Paper → Code: Triangle Classifier (Java)</h2>
+      <p class="muted">
+        <strong>Pen &amp; Paper notes:</strong> Rules: (1) Valid triangle iff triangle inequality holds for all three pairs: <em>a + b &gt; c</em>, <em>a + c &gt; b</em>, <em>b + c &gt; a</em>. (2) If valid, type by equality: all equal → <em>equilateral</em>, any two equal → <em>isosceles</em>, else → <em>scalene</em>. Code structure: <code>isTriangle</code>, <code>triangleType</code>, <code>printResult</code>.
+      </p>
+      <div class="code"><pre><code>import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter the side a");
+        int a = scanner.nextInt();
+
+        System.out.println("Please enter the next side");
+        int b = scanner.nextInt();
+
+        System.out.println("Please enter the next next side");
+        int c = scanner.nextInt();
+
+        printResult(a, b, c);
+
+        scanner.close();
+    }
+
+    static boolean isTriangle(int a, int b, int c) {
+        if ((a + b &gt; c) &amp;&amp; (a + c &gt; b) &amp;&amp; (b + c &gt; a)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    static String triangleType(int a, int b, int c) {
+        if (a == b &amp;&amp; b == c) {
+            return "equilateral";
+        } else if (a == b || a == c || b == c) {
+            return "isosceles";
+        } else {
+            return "scalene";
+        }
+    }
+
+    static void printResult(int a, int b, int c) {
+        if (isTriangle(a, b, c) == false) {
+            System.out.println("Not a triangle");
+        } else {
+            String triangleType = triangleType(a, b, c);
+            System.out.println(triangleType);
+        }
+    }
+}</code></pre></div>
+      <h3 style="margin-top:14px">Notes &amp; possible improvements</h3>
+      <ul class="muted">
+        <li><strong>Input validation:</strong> Optionally reject non-positive sides (a ≤ 0 etc.).</li>
+        <li><strong>Cleaner booleans:</strong> <code>return (a + b &gt; c) &amp;&amp; ...</code> and <code>if (!isTriangle(...))</code> read cleaner.</li>
+        <li><strong>Overflow guard:</strong> For very large ints, cast to long before addition.</li>
+      </ul>
     </div>
 
   </div>
