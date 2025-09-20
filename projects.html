@@ -741,6 +741,245 @@ public class GuessTheBiggerStrategy {
 }</code></pre></div>
       </div>
 
+      <!-- ===================== ADDED FROM YOUR LATEST MESSAGE ===================== -->
+
+      <div class="card">
+        <h2>Princeton Web Exercise 2 — GradeInRange.java</h2>
+        <p class="muted">Reads an int grade and checks if 90 ≤ grade ≤ 100 using a chained comparison fix.</p>
+        <div class="code"><pre><code>import java.util.Scanner;
+
+public class GradeInRange {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int grade = scanner.nextInt();
+    boolean isA = (90 &lt;= grade &amp;&amp; grade &lt;= 100);
+    System.out.println(isA);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 6 — CastDemo.java</h2>
+        <p class="muted">Shows integer division vs. proper floating‑point division.</p>
+        <div class="code"><pre><code>public class CastDemo {
+  public static void main(String[] args) {
+    double x1 = (double) (3 / 5);   // integer division first → 0.0
+    double x2 = 3 / 5.0;            // correct: 0.6
+    System.out.println(x1);
+    System.out.println(x2);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 7 — IntOverflow.java</h2>
+        <p class="muted">Demonstrates overflow when multiplying ints before widening to long.</p>
+        <div class="code"><pre><code>public class IntOverflow {
+  public static void main(String[] args) {
+    int x = 65536;
+    long wrong = x * x;          // int*int overflows before widening
+    long correct = (long) x * x; // widen first, then multiply in long
+    System.out.println(wrong);
+    System.out.println(correct);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 8 — SqrtEquality.java</h2>
+        <p class="muted">Floating‑point quirks: sqrt(2)*sqrt(2) vs 2.</p>
+        <div class="code"><pre><code>public class SqrtEquality {
+  public static void main(String[] args) {
+    boolean eq = (Math.sqrt(2) * Math.sqrt(2) == 2);
+    System.out.println(eq);
+    System.out.println(Math.sqrt(2) * Math.sqrt(2)); // show tiny rounding error
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 14 — LeapYear.java</h2>
+        <p class="muted">Determines if a given year is a leap year. (This version uses command‑line args.)</p>
+        <div class="code"><pre><code>public class LeapYear {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java LeapYear &lt;year&gt;");
+      return;
+    }
+    try {
+      int y = Integer.parseInt(args[0]);
+      boolean leap = (y % 400 == 0) || ((y % 4 == 0) &amp;&amp; (y % 100 != 0));
+      System.out.println(leap);
+    } catch (NumberFormatException e) {
+      System.out.println("Invalid year");
+    }
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 15 — CompileError_ThreeLiteral.java <span class="muted">(intended to FAIL)</span></h2>
+        <p class="muted">Demonstrates a compile‑time type error.</p>
+        <div class="code"><pre><code>public class CompileError_ThreeLiteral {
+  public static void main(String[] args) {
+    int a = 27 * "three"; // compile-time error: bad operand types
+    System.out.println(a);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Working variant — MultiplyParsed.java</h2>
+        <p class="muted">Compiles and runs: parse "3" to an int before multiplying.</p>
+        <div class="code"><pre><code>public class MultiplyParsed {
+  public static void main(String[] args) {
+    int a = 27;
+    int b = Integer.parseInt("3");
+    System.out.println(a * b);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 16 — UninitializedLocal.java <span class="muted">(intended to FAIL)</span></h2>
+        <p class="muted">Shows compile error for using an uninitialized local variable.</p>
+        <div class="code"><pre><code>public class UninitializedLocal {
+  public static void main(String[] args) {
+    double x;
+    System.out.println(x); // compile-time error: variable x might not have been initialized
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 17 — DivisionMix.java</h2>
+        <p class="muted">Contrasts int/int, int/double, double/int, double/double.</p>
+        <div class="code"><pre><code>public class DivisionMix {
+  public static void main(String[] args) {
+    int threeInt = 3;
+    int fourInt  = 4;
+    double threeDouble = 3.0;
+    double fourDouble  = 4.0;
+
+    System.out.println(threeInt / fourInt);
+    System.out.println(threeInt / fourDouble);
+    System.out.println(threeDouble / fourInt);
+    System.out.println(threeDouble / fourDouble);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 24 — FahrenheitToCelsius.java</h2>
+        <p class="muted">Highlights the integer division pitfall in temperature conversion.</p>
+        <div class="code"><pre><code>import java.util.Scanner;
+
+public class FahrenheitToCelsius {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    double F = scanner.nextDouble();
+
+    double wrong = (F - 32) * (5 / 9);     // integer division → 0
+    double correct = (F - 32) * (5.0 / 9); // proper double arithmetic
+
+    System.out.println(wrong);
+    System.out.println(correct);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 25 — ExponentiationDemo.java</h2>
+        <p class="muted">Shows Math.pow vs. multiplication; warns that ^ is XOR.</p>
+        <div class="code"><pre><code>import java.util.Scanner;
+
+public class ExponentiationDemo {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    double a = scanner.nextDouble();
+    double squaredByPow = Math.pow(a, 2);
+    double squaredByMul = a * a;
+    System.out.println(squaredByPow);
+    System.out.println(squaredByMul);
+  }
+}
+
+// (If you write a ^ 2 with integers, that’s bitwise XOR, not exponentiation.)</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 26 — BooleanLiterals.java</h2>
+        <p class="muted">Legal vs illegal boolean literals.</p>
+        <div class="code"><pre><code>public class BooleanLiterals {
+  public static void main(String[] args) {
+    boolean b = true; // legal
+    System.out.println(b);
+  }
+}
+
+// (If you purposely try these, they will FAIL to compile:
+// boolean b = 1; boolean b = "true"; boolean b = True;)</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 27 — MaxWithoutIf.java</h2>
+        <p class="muted">Computes max(a,b) using arithmetic/abs; no if.</p>
+        <div class="code"><pre><code>import java.util.Scanner;
+
+public class MaxWithoutIf {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int a = scanner.nextInt();
+    int b = scanner.nextInt();
+    int max = (a + b + Math.abs(a - b)) / 2;
+    System.out.println(max);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 28 — CubicDiscriminant.java</h2>
+        <p class="muted">Computes cubic discriminant Δ for x³ + b x² + c x + d.</p>
+        <div class="code"><pre><code>import java.util.Scanner;
+
+public class CubicDiscriminant {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    double b = scanner.nextDouble();
+    double c = scanner.nextDouble();
+    double d = scanner.nextDouble();
+
+    double disc = (b*b)*(c*c) - 4*Math.pow(c, 3) - 4*Math.pow(b, 3)*d
+                  - 27*Math.pow(d, 2) + 18*b*c*d;
+    System.out.println(disc);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Princeton Web Exercise 30 — PoisonParentheses.java <span class="muted">(intended to FAIL)</span></h2>
+        <p class="muted">Shows why -(2147483648) is illegal as an int literal.</p>
+        <div class="code"><pre><code>public class PoisonParentheses {
+  public static void main(String[] args) {
+    int x = -(2147483648); // compile-time error: integer number too large
+    System.out.println(x);
+  }
+}</code></pre></div>
+      </div>
+
+      <div class="card">
+        <h2>Working variant — PoisonParenthesesFixed.java</h2>
+        <p class="muted">Correct ways to express Integer.MIN_VALUE or negate a long literal.</p>
+        <div class="code"><pre><code>public class PoisonParenthesesFixed {
+  public static void main(String[] args) {
+    int ok = -2147483648;         // valid: MIN_VALUE as unary minus of literal
+    long alsoOk = -(2147483648L); // long literal, then unary minus
+    System.out.println(ok);
+    System.out.println(alsoOk);
+  }
+}</code></pre></div>
+      </div>
+
     </div>
   </main>
 </body>
