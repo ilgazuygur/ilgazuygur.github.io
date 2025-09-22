@@ -268,7 +268,7 @@ public class MyProgram {
     int num1 = scanner.nextInt();
     System.out.println("Enter the second number");
     int num2 = scanner.nextInt();
-    if ((num1 % 7 == 0) &amp;&amp; (num2 % 7 == 0)){
+    if ((num1 % 7 == 0) && (num2 % 7 == 0)){
       System.out.println("True");
     } else {
       System.out.println("False");
@@ -311,7 +311,7 @@ public class MyProgram {
     int x = scanner.nextInt();
     int y = scanner.nextInt();
     int z = scanner.nextInt();
-    if (((x &gt;= y) &amp;&amp; (y &gt;= z)) || ((z &gt;= y) &amp;&amp; (y &gt;= x))){
+    if (((x >= y) && (y >= z)) || ((z >= y) && (y >= x))){
       System.out.println("True");
     } else {
       System.out.println("False");
@@ -332,10 +332,10 @@ public class MyProgram {
   public static double computeAverage(int total) { return total / 3.0; } // avoid int division
 
   public static String letterGrade(double average) {
-    if (average &gt;= 90) return "A";
-    else if (average &gt;= 80) return "B";
-    else if (average &gt;= 70) return "C";
-    else if (average &gt;= 60) return "D";
+    if (average >= 90) return "A";
+    else if (average >= 80) return "B";
+    else if (average >= 70) return "C";
+    else if (average >= 60) return "D";
     else return "F";
   }
 
@@ -379,11 +379,11 @@ public class Main {
   }
 
   static boolean isTriangle(int a, int b, int c) {
-    return (a + b &gt; c) &amp;&amp; (a + c &gt; b) &amp;&amp; (b + c &gt; a);
+    return (a + b > c) && (a + c > b) && (b + c > a);
   }
 
   static String triangleType(int a, int b, int c) {
-    if (a == b &amp;&amp; b == c) return "equilateral";
+    if (a == b && b == c) return "equilateral";
     else if (a == b || a == c || b == c) return "isosceles";
     else return "scalene";
   }
@@ -400,8 +400,6 @@ public class Main {
       </div>
 
       <!-- -------- NEW PRINCETON WEB EXERCISES (non-duplicates) -------- -->
-
-      <!-- Princeton Web Exercise 1 — Swap.java (DUPLICATE of Project 9; keeping your original) -->
 
       <!-- Princeton Web Exercise 2 — RGBtoYIQ.java -->
       <div class="card">
@@ -485,12 +483,12 @@ public class CMYKtoRGB {
     try {
       System.out.println("17 / 0 = " + (17 / 0));
     } catch (ArithmeticException e) {
-      System.out.println("17 / 0 -&gt; ArithmeticException: " + e.getMessage());
+      System.out.println("17 / 0 -> ArithmeticException: " + e.getMessage());
     }
     try {
       System.out.println("17 % 0 = " + (17 % 0));
     } catch (ArithmeticException e) {
-      System.out.println("17 % 0 -&gt; ArithmeticException: " + e.getMessage());
+      System.out.println("17 % 0 -> ArithmeticException: " + e.getMessage());
     }
     System.out.println("17.0 / 0.0 = " + (17.0 / 0.0));
     System.out.println("17.0 % 0.0 = " + (17.0 % 0.0));
@@ -508,7 +506,7 @@ public class CMYKtoRGB {
     String b = "b";
     System.out.println("f(0) = " + a);
     System.out.println("f(1) = " + b);
-    for (int n = 2; n &lt;= 10; n++) {
+    for (int n = 2; n <= 10; n++) {
       String c = b + a;
       System.out.println("f(" + n + ") = " + c);
       a = b;
@@ -528,7 +526,7 @@ import java.util.ArrayList;
 public class StdStats {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    ArrayList&lt;Double&gt; list = new ArrayList&lt;&gt;();
+    ArrayList<Double> list = new ArrayList<>();
     while (scanner.hasNextDouble()) list.add(scanner.nextDouble());
     int n = list.size();
     if (n == 0) {
@@ -541,7 +539,7 @@ public class StdStats {
     double mean = sum / n;
     double sq = 0.0;
     for (double v : list) sq += (v - mean) * (v - mean);
-    double sampleVar = (n &gt; 1) ? sq / (n - 1) : Double.NaN;
+    double sampleVar = (n > 1) ? sq / (n - 1) : Double.NaN;
     double sampleStd = Math.sqrt(sampleVar);
     System.out.println("mean = " + mean);
     System.out.println("sample stddev = " + sampleStd);
@@ -561,7 +559,7 @@ public class AllEqual3 {
     int a = scanner.nextInt();
     int b = scanner.nextInt();
     int c = scanner.nextInt();
-    boolean all = (a == b) &amp;&amp; (b == c);
+    boolean all = (a == b) && (b == c);
     System.out.println(all);
   }
 }</code></pre></div>
@@ -587,9 +585,6 @@ public class Distance {
   }
 }</code></pre></div>
       </div>
-
-      <!-- Princeton Web Exercise 10 — Ordered.java (duplicate of Project 10; kept original) -->
-      <!-- Princeton Web Exercise 11 — Divisibility.java (duplicate of Project 8; kept original) -->
 
       <!-- Princeton Web Exercise 12 — TriangleArea.java -->
       <div class="card">
@@ -725,15 +720,15 @@ public class GuessTheBiggerStrategy {
     int trials = scanner.nextInt();
     int wins = 0;
     Random rng = new Random();
-    for (int k = 0; k &lt; trials; k++) {
+    for (int k = 0; k < trials; k++) {
       int a = rng.nextInt(101);
       int b = rng.nextInt(101);
       boolean revealA = rng.nextBoolean();
       int seen = revealA ? a : b;
-      boolean chooseSeen = (seen &gt;= T);
+      boolean chooseSeen = (seen >= T);
       int chosen = chooseSeen ? seen : (revealA ? b : a);
       int other = chooseSeen ? (revealA ? b : a) : seen;
-      if (chosen &gt;= other) wins++;
+      if (chosen >= other) wins++;
     }
     double rate = 100.0 * wins / trials;
     System.out.printf("Win rate ≈ %.2f%%%n", rate);
@@ -741,7 +736,7 @@ public class GuessTheBiggerStrategy {
 }</code></pre></div>
       </div>
 
-      <!-- ===================== ADDED FROM YOUR LATEST MESSAGE ===================== -->
+      <!-- ===================== ADDED SECTION FROM LATEST ===================== -->
 
       <div class="card">
         <h2>Princeton Web Exercise 2 — GradeInRange.java</h2>
@@ -752,7 +747,7 @@ public class GradeInRange {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int grade = scanner.nextInt();
-    boolean isA = (90 &lt;= grade &amp;&amp; grade &lt;= 100);
+    boolean isA = (90 <= grade && grade <= 100);
     System.out.println(isA);
   }
 }</code></pre></div>
@@ -803,12 +798,12 @@ public class GradeInRange {
         <div class="code"><pre><code>public class LeapYear {
   public static void main(String[] args) {
     if (args.length != 1) {
-      System.out.println("Usage: java LeapYear &lt;year&gt;");
+      System.out.println("Usage: java LeapYear <year>");
       return;
     }
     try {
       int y = Integer.parseInt(args[0]);
-      boolean leap = (y % 400 == 0) || ((y % 4 == 0) &amp;&amp; (y % 100 != 0));
+      boolean leap = (y % 400 == 0) || ((y % 4 == 0) && (y % 100 != 0));
       System.out.println(leap);
     } catch (NumberFormatException e) {
       System.out.println("Invalid year");
@@ -978,6 +973,65 @@ public class CubicDiscriminant {
     System.out.println(alsoOk);
   }
 }</code></pre></div>
+      </div>
+
+      <!-- NEW: Turtle & Car project card -->
+      <div class="card">
+        <h2>Project — Turtle &amp; Car (Java)</h2>
+        <p class="muted">Simple OOP demo with two classes (<code>Turtle</code> and <code>Car</code>) and a runner.</p>
+        <div class="code"><pre><code>// ThingsRunner.java
+public class ThingsRunner {
+  public static void main(String[] args) {
+    Turtle turtle1 = new Turtle(15, 18, 0, 0, "Doruk");
+    turtle1.Forward();
+    turtle1.printOut();
+    turtle1.moveTo(8, 8);
+    turtle1.printOut();
+    turtle1.setWidth(192);
+    turtle1.setHeight(89);
+    turtle1.printOut();
+
+    Car car1 = new Car("Toyota", 180, 150, 0, 0);
+    car1.drive(50);
+    car1.printOut();
+    car1.setWidth(200);
+    car1.setHeight(160);
+    car1.printOut();
+    car1.openDoor();
+    car1.printOut();
+    car1.closeDoor();
+    car1.printOut();
+  }
+}
+
+// Turtle.java
+public class Turtle {
+  private double width, height, xPos, yPos; private String name;
+  public Turtle(double width,double height,double xPos,double yPos,String name){
+    this.width=width; this.height=height; this.xPos=xPos; this.yPos=yPos; this.name=name; }
+  public void Forward(){ xPos += 1; }
+  public void Forward(int pixels){ xPos += pixels; }
+  public void backward(int pixels){ xPos -= pixels; }
+  public void moveTo(int x,int y){ xPos=x; yPos=y; }
+  public void setWidth(double w){ width=w; }
+  public void setHeight(double h){ height=h; }
+  public void printOut(){ System.out.println(toString()); }
+  public String toString(){ return "Turtle{"+"name='"+name+'\''+", width="+width+", height="+height+", xPos="+xPos+", yPos="+yPos+'}'; }
+}
+
+// Car.java
+public class Car {
+  private String model; private double width,height,kmDriven,acceleration; private boolean doorOpen;
+  public Car(String model,double width,double height,double kmDriven,double acceleration){
+    this.model=model; this.width=width; this.height=height; this.kmDriven=kmDriven; this.acceleration=acceleration; this.doorOpen=false; }
+  public void drive(double distance){ kmDriven += distance; }
+  public void setWidth(double w){ width = w; }
+  public void setHeight(double h){ height = h; }
+  public void openDoor(){ doorOpen = true; }
+  public void closeDoor(){ doorOpen = false; }
+  public void printOut(){ System.out.println("Car{"+"model='"+model+'\''+", width="+width+", height="+height+", kmDriven="+kmDriven+", acceleration="+acceleration+", doorOpen="+doorOpen+'}'); }
+}
+</code></pre></div>
       </div>
 
     </div>
