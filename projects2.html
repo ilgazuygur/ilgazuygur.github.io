@@ -59,7 +59,64 @@
 
   <div class="grid" style="margin-top:20px">
 
-    <!-- örnek olarak bir proje daha -->
+    <!-- Word Scoring Program (NEW) -->
+    <div class="card">
+      <h2>Project — Word Scoring (Java)</h2>
+      <p class="muted">Reads a word and five start positions; scores 4-letter slices with letter/word multipliers.</p>
+      <div class="code"><pre><code>import java.util.*;
+
+public class MyProgram {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String word = scanner.nextLine().replaceAll(",", "").replaceAll(" ", "").toUpperCase();
+    int p1 = scanner.nextInt();
+    int p2 = scanner.nextInt();
+    int p3 = scanner.nextInt();
+    int p4 = scanner.nextInt();
+    int p5 = scanner.nextInt();
+    System.out.println(scoreWord(word, p1));
+    System.out.println(scoreWord(word, p2));
+    System.out.println(scoreWord(word, p3));
+    System.out.println(scoreWord(word, p4));
+    System.out.println(scoreWord(word, p5));
+  }
+
+  public static int scoreWord(String word, int start) {
+    int total = 0;
+    boolean wordMultiplied = false;
+    int multiplier = 1;
+    for (int i = 0; i &lt; 4; i++) {
+      int pos = start + i;
+      char c = word.charAt(i);
+      int score = letterScore(c);
+      if (pos % 3 == 0 &amp;&amp; (pos / 3) % 2 == 1) {
+        score *= 2;
+      } else if (pos % 5 == 0) {
+        score *= 3;
+      } else if (pos % 7 == 0 &amp;&amp; !wordMultiplied) {
+        multiplier *= 2;
+        wordMultiplied = true;
+      } else if (pos % 8 == 0 &amp;&amp; !wordMultiplied) {
+        multiplier *= 3;
+        wordMultiplied = true;
+      }
+      total += score;
+    }
+    return total * multiplier;
+  }
+
+  public static int letterScore(char letter) {
+    if (letter == 'A' || letter == 'E') return 1;
+    else if (letter == 'D' || letter == 'R') return 2;
+    else if (letter == 'B' || letter == 'M') return 3;
+    else if (letter == 'V' || letter == 'Y') return 4;
+    else if (letter == 'J' || letter == 'X') return 8;
+    return 0;
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Existing example project -->
     <div class="card">
       <h2>Project — Turtle &amp; Car (Java)</h2>
       <p class="muted">Simple OOP demo with two classes (<code>Turtle</code> and <code>Car</code>) and a runner.</p>
