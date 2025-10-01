@@ -1,6 +1,3 @@
-<!-- =========================
-File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2)
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +11,7 @@ File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2
   <style>
     :root{--bg:#0b0d10;--muted:#a9b3c1;--text:#e8eef7;--accent:#7cc4ff;--radius:16px;--maxw:1080px;--shadow:0 8px 24px rgba(0,0,0,.35)}
     *{box-sizing:border-box}html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:
-      radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%),
-      radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%),
-      var(--bg);color:var(--text);line-height:1.6}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background: radial-gradient(1200px 800px at 20% -10%,#1b2330 0%,transparent 60%), radial-gradient(1000px 600px at 120% 10%,#10202b 0%,transparent 60%), var(--bg);color:var(--text);line-height:1.6}
     a{color:var(--accent);text-decoration:none}a:hover{opacity:.9}
     header{position:sticky;top:0;background:rgba(11,13,16,.65);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,196,255,.15)}
     .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
@@ -45,7 +39,6 @@ File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2
     </div>
   </nav>
 </header>
-
 <main>
   <div class="card">
     <h1>Big Ideas</h1>
@@ -130,7 +123,6 @@ File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2
   </div>
 
   <!-- All provided summaries (as given, not rewritten) -->
-
   <div class="card">
     <h2>1.1.10 Summary</h2>
     <ul>
@@ -144,12 +136,10 @@ File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2
       <li><strong>Logic errors:</strong> Kod çalışır ama yanlış sonuç verir; testle bulunur.</li>
       <li><strong>Run-time errors:</strong> Çalışma anında oluşur, exceptions program akışını keser.</li>
     </ul>
-    <pre><code>public class MyClass
-{
-    public static void main(String[] args)
-    {
-        System.out.println("Hi there!");
-    }
+    <pre><code>public class MyClass {
+  public static void main(String[] args) {
+    System.out.println("Hi there!");
+  }
 }</code></pre>
   </div>
 
@@ -159,8 +149,7 @@ File: big-ideas.html (AP CSA 1.1–1.9 + all provided summaries 1.1.10 .. 1.20.2
       <li>(AP 1.2.B.2) A variable is a memory storage location that holds a value, which can change while the program is running.</li>
       <li>(AP 1.2.B.2) Every variable has a name and an associated data type that determines the kind of data it can hold. A variable of a primitive type holds a primitive value from that type.</li>
     </ul>
-    <pre><code>int score;
-double gpa = 3.5;</code></pre>
+    <pre><code>int score; double gpa = 3.5;</code></pre>
     <ul>
       <li>(AP 1.2.A.1) A data type is a set of values and a corresponding set of operations on those values. Data types can be primitive types (like int) or reference types (like String).</li>
       <li>(AP 1.2.A.2) The primitive data types used in this course define the set of values and corresponding operations on those values for numbers and Boolean values.</li>
@@ -290,7 +279,7 @@ double gpa = 3.5;</code></pre>
       <li>(AP 1.13.A.1) Constructors have the same name as the class.</li>
       <li>(AP 1.13.C.1) new ClassName() creates a new object and calls a constructor.</li>
       <li>(AP 1.13.B.1) The new object is saved in a variable of a reference type (or null).</li>
-      <li>(AP 1.13.A.2) Constructor signature = name + ordered parameter types; parameter list has types & names.</li>
+      <li>(AP 1.13.A.2) Constructor signature = name + ordered parameter types; parameter list has types &amp; names.</li>
       <li>(AP 1.13.A.3) Overloaded constructors differ by number/type/order.</li>
       <li>No-argument constructor: takes no arguments.</li>
       <li>(AP 1.13.C.2) Parameters establish initial attribute values.</li>
@@ -305,7 +294,7 @@ double gpa = 3.5;</code></pre>
       <li>Instance methods define behavior; called on objects.</li>
       <li>(AP 1.14.A.1) Use dot operator: <code>object.method()</code>.</li>
       <li>(AP 1.14.A.2) Calling on null → <code>NullPointerException</code>.</li>
-      <li>Methods can take arguments; signature = name + parameter list (types & names).</li>
+      <li>Methods can take arguments; signature = name + parameter list (types &amp; names).</li>
       <li>Arguments must match number, order, type.</li>
       <li>Method call interrupts sequential flow; resumes after method returns.</li>
       <li>Non-void methods return values; use the returned value.</li>
@@ -387,6 +376,49 @@ double gpa = 3.5;</code></pre>
       <li>Random range: <code>(int)(Math.random()*range) + min</code> where <code>range = max - min + 1</code>.</li>
     </ul>
   </div>
+
+  <!-- ===================== NEW: CLASS NOTES (APPENDED AT THE END) ===================== -->
+  <div class="card">
+    <h2>Class Notes — Java &amp; String Hızlı Rehber (alt alta satırlar)</h2>
+    <p class="muted">Sık kullanılan satırlar (I/O, Math, değişkenler) ve String metodları — **tek tek satırlar** halinde.</p>
+
+    <h3>Java Satırları</h3>
+    <pre><code>System.out.println("Hello");
+System.out.print("No newline");
+import java.util.Scanner;
+Scanner scanner = new Scanner(System.in);
+int a = scanner.nextInt();
+double x = scanner.nextDouble();
+String w = scanner.next();           // boşluğa kadar
+String line = scanner.nextLine();    // tüm satırı alır
+final double PI = Math.PI;
+double s = Math.sqrt(16);
+double p = Math.pow(2, 5);
+int mx = Math.max(aa, bb);
+int mn = Math.min(aa, bb);
+double r = Math.random();</code></pre>
+
+    <h3>String Metodları</h3>
+    <pre><code>String word = "mind";
+int n = word.length();
+char c = word.charAt(2);                 // 'n'
+String first = word.substring(0, 1);
+String mid = word.substring(1, 3);       // "in"
+int pos = word.indexOf("in");            // 1 (yoksa -1)
+boolean has = word.contains("in");       // true
+String rep = "m y".replace(" ", "\n");
+boolean eq = "hello".equals("hello");    // true
+int cmp = "hello".compareTo("jello");    // negatif
+String up = "hi".toUpperCase();
+String low = "OK".toLowerCase();</code></pre>
+
+    <h3>Karakter Karakter Döngü</h3>
+    <pre><code>for (int i = 0; i &lt; word.length(); i++) {
+  char ch = word.charAt(i);
+  // işlem...
+}</code></pre>
+  </div>
+  <!-- ===================== /APPENDED ===================== -->
 
 </main>
 </body>
