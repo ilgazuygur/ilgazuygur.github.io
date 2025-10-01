@@ -32,34 +32,36 @@
     pre{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:14px;line-height:1.5;color:#e9f1fb;white-space:pre}
     .muted{color:var(--muted)}
     h1{margin-top:0} h2{margin:0 0 10px 0}
+    /* extra for button card */
+    .center{display:flex;justify-content:center}
+    .cta{display:inline-block;margin-top:6px;padding:10px 14px;border-radius:12px;border:1px solid rgba(124,196,255,.35);background:rgba(124,196,255,.12)}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <div class="brand">Ilgaz Uygur</div>
-      <div class="spacer"></div>
-      <div class="tabs">
-        <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="big-ideas.html">Big Ideas</a>
-        <a href="documentation.html">Documentation</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="card">
-      <h1>Projects</h1>
+<header>
+  <nav class="nav">
+    <div class="brand">Ilgaz Uygur</div>
+    <div class="spacer"></div>
+    <div class="tabs">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="big-ideas.html">Big Ideas</a>
+      <a href="documentation.html">Documentation</a>
     </div>
+  </nav>
+</header>
+<main>
+  <div class="card">
+    <h1>Projects</h1>
+  </div>
 
-    <div class="grid" style="margin-top:20px">
+  <div class="grid" style="margin-top:20px">
 
-      <!-- Project 1 -->
-      <div class="card">
-        <h2>Project 1 — Basic Arithmetic (Java)</h2>
-        <p class="muted">Takes two integers and prints their sum, difference, product, and quotient with a divide-by-zero check.</p>
-        <div class="code"><pre><code>//Take two numbers and print the sum difference product and quotient
+    <!-- Project 1 -->
+    <div class="card">
+      <h2>Project 1 — Basic Arithmetic (Java)</h2>
+      <p class="muted">Takes two integers and prints their sum, difference, product, and quotient with a divide-by-zero check.</p>
+      <div class="code"><pre><code>//Take two numbers and print the sum difference product and quotient
 import java.util.Scanner;
 public class MyProgram {
   public static void main(String[] args){
@@ -84,13 +86,13 @@ public class MyProgram {
     }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 2 -->
-      <div class="card">
-        <h2>Project 2 — Ice Cream Sales (Java)</h2>
-        <p class="muted">Reads 3 days of chocolate/vanilla/strawberry sales; prints total and average.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 2 -->
+    <div class="card">
+      <h2>Project 2 — Ice Cream Sales (Java)</h2>
+      <p class="muted">Reads 3 days of chocolate/vanilla/strawberry sales; prints total and average.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MyProgram {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -100,21 +102,18 @@ public class MyProgram {
     int vanil1 = scanner.nextInt();
     System.out.println("Please enter the strawberry sales on the first day:");
     int straw1 = scanner.nextInt();
-
     System.out.println("Please enter the chocolate sales on the second day:");
     int ciko2 = scanner.nextInt();
     System.out.println("Please enter the vanilla sales on the second day:");
     int vanil2 = scanner.nextInt();
     System.out.println("Please enter the strawberry sales on the second day:");
     int straw2 = scanner.nextInt();
-
     System.out.println("Please enter the chocolate sales on the third day:");
     int ciko3 = scanner.nextInt();
     System.out.println("Please enter the vanilla sales on the third day:");
     int vanil3 = scanner.nextInt();
     System.out.println("Please enter the strawberry sales on the third day:");
     int straw3 = scanner.nextInt();
-
     int total = (ciko1+vanil1+straw1+ciko2+vanil2+straw2+ciko3+vanil3+straw3);
     double average1 = (total/6);
     int average = (total/6);
@@ -123,13 +122,13 @@ public class MyProgram {
     System.out.println(average);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 3 -->
-      <div class="card">
-        <h2>Project 3 — Rocket to the Stars (Java)</h2>
-        <p class="muted">User enters mass (kg), engine force (N), burn time (s). Prints acceleration, final velocity, and altitude.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 3 -->
+    <div class="card">
+      <h2>Project 3 — Rocket to the Stars (Java)</h2>
+      <p class="muted">User enters mass (kg), engine force (N), burn time (s). Prints acceleration, final velocity, and altitude.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class RocketToTheStars {
   public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
@@ -139,11 +138,9 @@ public class RocketToTheStars {
     double force = scanner.nextDouble();
     System.out.print("Enter burn time (s): ");
     double time = scanner.nextDouble();
-
     double a = force / mass;
     double v = a * time;
     double h = 0.5 * a * time * time;
-
     System.out.println();
     System.out.println("Net acceleration (m/s^2): " + a);
     System.out.println("Net acceleration (int): " + (int)a);
@@ -154,33 +151,31 @@ public class RocketToTheStars {
     System.out.println("Altitude reached (m): " + h);
     System.out.println("Altitude (int): " + (int)h);
     System.out.println();
-    System.out.println("    /\\");
-    System.out.println("   /  \\");
-    System.out.println("  |====|");
-    System.out.println("  |    |");
-    System.out.println("  |NASA|");
-    System.out.println("   ||||");
-    System.out.println("   ||||");
+    System.out.println(" /\\");
+    System.out.println(" / \\");
+    System.out.println(" |====|");
+    System.out.println(" |    |");
+    System.out.println(" |NASA|");
+    System.out.println("  ||||");
+    System.out.println("  ||||");
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 4 -->
-      <div class="card">
-        <h2>Project 4 — Square Root (SICP-Style, No sqrt)</h2>
-        <p class="muted">Newton's method with 3 manual steps, no loops or Math.sqrt.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 4 -->
+    <div class="card">
+      <h2>Project 4 — Square Root (SICP-Style, No sqrt)</h2>
+      <p class="muted">Newton's method with 3 manual steps, no loops or Math.sqrt.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class SqrtNewtonThreeSteps {
   public static void main(String[] args){
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter N: ");
     double N = scanner.nextDouble();
-
     double x0 = N / 2.0;
     double x1 = 0.5 * (x0 + N / x0);
     double x2 = 0.5 * (x1 + N / x1);
     double x3 = 0.5 * (x2 + N / x2);
-
     System.out.println("Initial guess x0 = " + x0);
     System.out.println("x1 = " + x1);
     System.out.println("x2 = " + x2);
@@ -189,13 +184,13 @@ public class SqrtNewtonThreeSteps {
     System.out.println("Approx sqrt(N) (int) = " + (int)x3);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 5 -->
-      <div class="card">
-        <h2>Project 5 — Princeton Java #25 Wind Chill</h2>
-        <p class="muted">Calculates wind chill from temperature and wind speed.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 5 -->
+    <div class="card">
+      <h2>Project 5 — Princeton Java #25 Wind Chill</h2>
+      <p class="muted">Calculates wind chill from temperature and wind speed.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class WindChill {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -205,17 +200,17 @@ public class WindChill {
     double v = scanner.nextDouble();
     double w = 35.74 + 0.6215*t + (0.4275*t - 35.75) * Math.pow(v, 0.16);
     System.out.println("Temperature = " + t);
-    System.out.println("Wind speed  = " + v);
-    System.out.println("Wind chill  = " + w);
+    System.out.println("Wind speed = " + v);
+    System.out.println("Wind chill = " + w);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 6 -->
-      <div class="card">
-        <h2>Project 6 — Princeton Java #26 Polar Coordinates</h2>
-        <p class="muted">Reads Cartesian (x,y) and converts to polar coordinates (r,θ).</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 6 -->
+    <div class="card">
+      <h2>Project 6 — Princeton Java #26 Polar Coordinates</h2>
+      <p class="muted">Reads Cartesian (x,y) and converts to polar coordinates (r,θ).</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class PolarCoordinates {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -223,19 +218,19 @@ public class PolarCoordinates {
     double x = scanner.nextDouble();
     System.out.println("Please enter y value:");
     double y = scanner.nextDouble();
-    double r     = Math.sqrt(x*x + y*y);
+    double r = Math.sqrt(x*x + y*y);
     double theta = Math.atan2(y, x);
-    System.out.println("r     = " + r);
+    System.out.println("r = " + r);
     System.out.println("theta = " + theta);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 7 -->
-      <div class="card">
-        <h2>Project 7 — Princeton Java #29 Day of Week</h2>
-        <p class="muted">Uses Zeller’s congruence to compute the day of the week.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 7 -->
+    <div class="card">
+      <h2>Project 7 — Princeton Java #29 Day of Week</h2>
+      <p class="muted">Uses Zeller’s congruence to compute the day of the week.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class DayOfWeek {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -245,22 +240,20 @@ public class DayOfWeek {
     int month = scanner.nextInt();
     System.out.println("Please enter the year:");
     int year = scanner.nextInt();
-
     int y0 = year - (14 - month) / 12;
     int x = y0 + y0/4 - y0/100 + y0/400;
     int m0 = month + 12 * ((14 - month) / 12) - 2;
     int d0 = (day + x + (31*m0)/12) % 7;
-
     System.out.println(d0);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 8 -->
-      <div class="card">
-        <h2>Project 8 — Web Problem: Divisibility (Java)</h2>
-        <p class="muted">Checks if two integers are both divisible by 7; prints <code>True</code> if both are, otherwise <code>False</code>.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 8 -->
+    <div class="card">
+      <h2>Project 8 — Web Problem: Divisibility (Java)</h2>
+      <p class="muted">Checks if two integers are both divisible by 7; prints <code>True</code> if both are, otherwise <code>False</code>.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MyProgram {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -275,13 +268,13 @@ public class MyProgram {
     }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 9 -->
-      <div class="card">
-        <h2>Project 9 — Web Exercise: Swap (Java)</h2>
-        <p class="muted">Reads two integers, swaps their values using a temporary variable, and prints the updated numbers.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 9 -->
+    <div class="card">
+      <h2>Project 9 — Web Exercise: Swap (Java)</h2>
+      <p class="muted">Reads two integers, swaps their values using a temporary variable, and prints the updated numbers.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MyProgram {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -297,13 +290,13 @@ public class MyProgram {
     System.out.println("Updated Second number is : " + num2);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 10 -->
-      <div class="card">
-        <h2>Project 10 — Web Exercise: Ordered (Java)</h2>
-        <p class="muted">Reads three integers and prints <code>True</code> if the middle number is between the other two; otherwise <code>False</code>.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 10 -->
+    <div class="card">
+      <h2>Project 10 — Web Exercise: Ordered (Java)</h2>
+      <p class="muted">Reads three integers and prints <code>True</code> if the middle number is between the other two; otherwise <code>False</code>.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MyProgram {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -318,19 +311,16 @@ public class MyProgram {
     }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 11 -->
-      <div class="card">
-        <h2>Project 11 — Pen &amp; Paper → Code: Grade Calculator (Java)</h2>
-        <p class="muted"><strong>Pen &amp; Paper notes:</strong> Read three scores, compute total, average, and letter grade.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 11 -->
+    <div class="card">
+      <h2>Project 11 — Pen &amp; Paper → Code: Grade Calculator (Java)</h2>
+      <p class="muted"><strong>Pen &amp; Paper notes:</strong> Read three scores, compute total, average, and letter grade.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MyProgram {
-
   public static int computeTotal(int a, int b, int c) { return a + b + c; }
-
   public static double computeAverage(int total) { return total / 3.0; } // avoid int division
-
   public static String letterGrade(double average) {
     if (average >= 90) return "A";
     else if (average >= 80) return "B";
@@ -338,7 +328,6 @@ public class MyProgram {
     else if (average >= 60) return "D";
     else return "F";
   }
-
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Please enter the value a: ");
@@ -347,24 +336,22 @@ public class MyProgram {
     int b = scanner.nextInt();
     System.out.print("Please enter the value c: ");
     int c = scanner.nextInt();
-
     int total = computeTotal(a, b, c);
     double average = computeAverage(total);
     String grade = letterGrade(average);
-
-    System.out.println("Total   = " + total);
+    System.out.println("Total = " + total);
     System.out.println("Average = " + average);
-    System.out.println("Letter  = " + grade);
+    System.out.println("Letter = " + grade);
     scanner.close();
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Project 12 -->
-      <div class="card">
-        <h2>Project 12 — Pen &amp; Paper → Code: Triangle Classifier (Java)</h2>
-        <p class="muted"><strong>Pen &amp; Paper notes:</strong> Validate triangle then classify as equilateral/isosceles/scalene.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Project 12 -->
+    <div class="card">
+      <h2>Project 12 — Pen &amp; Paper → Code: Triangle Classifier (Java)</h2>
+      <p class="muted"><strong>Pen &amp; Paper notes:</strong> Validate triangle then classify as equilateral/isosceles/scalene.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -377,36 +364,25 @@ public class Main {
     printResult(a, b, c);
     scanner.close();
   }
-
-  static boolean isTriangle(int a, int b, int c) {
-    return (a + b > c) && (a + c > b) && (b + c > a);
-  }
-
+  static boolean isTriangle(int a, int b, int c) { return (a + b > c) && (a + c > b) && (b + c > a); }
   static String triangleType(int a, int b, int c) {
     if (a == b && b == c) return "equilateral";
     else if (a == b || a == c || b == c) return "isosceles";
     else return "scalene";
   }
-
   static void printResult(int a, int b, int c) {
-    if (!isTriangle(a, b, c)) {
-      System.out.println("Not a triangle");
-    } else {
-      String triangleType = triangleType(a, b, c);
-      System.out.println(triangleType);
-    }
+    if (!isTriangle(a, b, c)) { System.out.println("Not a triangle"); }
+    else { String triangleType = triangleType(a, b, c); System.out.println(triangleType); }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- -------- NEW PRINCETON WEB EXERCISES (non-duplicates) -------- -->
-
-      <!-- Princeton Web Exercise 2 — RGBtoYIQ.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 2 — RGBtoYIQ.java</h2>
-        <p class="muted">Converts 8-bit RGB to YIQ (normalized 0–1) and prints Y, I, Q.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- -------- NEW PRINCETON WEB EXERCISES (non-duplicates) -------- -->
+    <!-- Princeton Web Exercise 2 — RGBtoYIQ.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 2 — RGBtoYIQ.java</h2>
+      <p class="muted">Converts 8-bit RGB to YIQ (normalized 0–1) and prints Y, I, Q.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class RGBtoYIQ {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -422,18 +398,15 @@ public class RGBtoYIQ {
     System.out.printf("Y=%.6f I=%.6f Q=%.6f%n", Y, I, Q);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 3 — YIQtoRGB.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 3 — YIQtoRGB.java</h2>
-        <p class="muted">Converts YIQ back to 8-bit RGB (values clamped to [0,1] before scaling).</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 3 — YIQtoRGB.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 3 — YIQtoRGB.java</h2>
+      <p class="muted">Converts YIQ back to 8-bit RGB (values clamped to [0,1] before scaling).</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class YIQtoRGB {
-  private static double clamp(double x, double lo, double hi) {
-    return Math.max(lo, Math.min(hi, x));
-  }
+  private static double clamp(double x, double lo, double hi) { return Math.max(lo, Math.min(hi, x)); }
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     double Y = scanner.nextDouble();
@@ -451,14 +424,13 @@ public class YIQtoRGB {
     System.out.println(R + " " + G + " " + B);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 4 — CMYKtoRGB.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 4 — CMYKtoRGB.java</h2>
-        <p class="muted">Converts CMYK to 8-bit RGB.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 4 — CMYKtoRGB.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 4 — CMYKtoRGB.java</h2>
+      <p class="muted">Converts CMYK to 8-bit RGB.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class CMYKtoRGB {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -472,35 +444,29 @@ public class CMYKtoRGB {
     System.out.println(R + " " + G + " " + B);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 5 — DivideByZero.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 5 — DivideByZero.java</h2>
-        <p class="muted">Demonstrates integer vs. floating-point division/mod by zero with try/catch.</p>
-        <div class="code"><pre><code>public class DivideByZero {
+    <!-- Princeton Web Exercise 5 — DivideByZero.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 5 — DivideByZero.java</h2>
+      <p class="muted">Demonstrates integer vs. floating-point division/mod by zero with try/catch.</p>
+      <div class="code"><pre><code>public class DivideByZero {
   public static void main(String[] args) {
-    try {
-      System.out.println("17 / 0 = " + (17 / 0));
-    } catch (ArithmeticException e) {
-      System.out.println("17 / 0 -> ArithmeticException: " + e.getMessage());
-    }
-    try {
-      System.out.println("17 % 0 = " + (17 % 0));
-    } catch (ArithmeticException e) {
-      System.out.println("17 % 0 -> ArithmeticException: " + e.getMessage());
-    }
+    try { System.out.println("17 / 0 = " + (17 / 0)); }
+    catch (ArithmeticException e) { System.out.println("17 / 0 -> ArithmeticException: " + e.getMessage()); }
+    try { System.out.println("17 % 0 = " + (17 % 0)); }
+    catch (ArithmeticException e) { System.out.println("17 % 0 -> ArithmeticException: " + e.getMessage()); }
     System.out.println("17.0 / 0.0 = " + (17.0 / 0.0));
     System.out.println("17.0 % 0.0 = " + (17.0 % 0.0));
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 6 — FibonacciWord.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 6 — FibonacciWord.java</h2>
-        <p class="muted">Builds Fibonacci words f(n) = f(n−1) + f(n−2) starting from "a","b".</p>
-        <div class="code"><pre><code>public class FibonacciWord {
+    <!-- Princeton Web Exercise 6 — FibonacciWord.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 6 — FibonacciWord.java</h2>
+      <p class="muted">Builds Fibonacci words f(n) = f(n−1) + f(n−2) starting from "a","b".</p>
+      <div class="code"><pre><code>public class FibonacciWord {
   public static void main(String[] args) {
     String a = "a";
     String b = "b";
@@ -509,24 +475,22 @@ public class CMYKtoRGB {
     for (int n = 2; n <= 10; n++) {
       String c = b + a;
       System.out.println("f(" + n + ") = " + c);
-      a = b;
-      b = c;
+      a = b; b = c;
     }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 7 — StdStats.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 7 — StdStats.java</h2>
-        <p class="muted">Reads doubles from stdin; prints mean and sample standard deviation.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Princeton Web Exercise 7 — StdStats.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 7 — StdStats.java</h2>
+      <p class="muted">Reads doubles from stdin; prints mean and sample standard deviation.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 import java.util.ArrayList;
-
 public class StdStats {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    ArrayList<Double> list = new ArrayList<>();
+    ArrayList&lt;Double&gt; list = new ArrayList&lt;&gt;();
     while (scanner.hasNextDouble()) list.add(scanner.nextDouble());
     int n = list.size();
     if (n == 0) {
@@ -545,14 +509,13 @@ public class StdStats {
     System.out.println("sample stddev = " + sampleStd);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 8 — AllEqual3.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 8 — AllEqual3.java</h2>
-        <p class="muted">Checks if three integers are all equal.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 8 — AllEqual3.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 8 — AllEqual3.java</h2>
+      <p class="muted">Checks if three integers are all equal.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class AllEqual3 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -563,14 +526,13 @@ public class AllEqual3 {
     System.out.println(all);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 9 — Distance.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 9 — Distance.java</h2>
-        <p class="muted">Computes Euclidean distance between (x1,y1) and (x2,y2).</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 9 — Distance.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 9 — Distance.java</h2>
+      <p class="muted">Computes Euclidean distance between (x1,y1) and (x2,y2).</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class Distance {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -584,14 +546,13 @@ public class Distance {
     System.out.println(d);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 12 — TriangleArea.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 12 — TriangleArea.java</h2>
-        <p class="muted">Heron's formula from side lengths a, b, c.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 12 — TriangleArea.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 12 — TriangleArea.java</h2>
+      <p class="muted">Heron's formula from side lengths a, b, c.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class TriangleArea {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -603,14 +564,13 @@ public class TriangleArea {
     System.out.println(area);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 13 — EquatorialToHorizontal.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 13 — EquatorialToHorizontal.java</h2>
-        <p class="muted">Converts equatorial (declination, hour angle) to horizontal (altitude, azimuth).</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 13 — EquatorialToHorizontal.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 13 — EquatorialToHorizontal.java</h2>
+      <p class="muted">Converts equatorial (declination, hour angle) to horizontal (altitude, azimuth).</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class EquatorialToHorizontal {
   private static double toRad(double deg) { return Math.toRadians(deg); }
   private static double toDeg(double rad) { return Math.toDegrees(rad); }
@@ -628,14 +588,13 @@ public class EquatorialToHorizontal {
     System.out.printf("Azimuth(deg)=%.6f%n", toDeg(Az));
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 14 — BMI.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 14 — BMI.java</h2>
-        <p class="muted">Computes Body Mass Index from weight and height.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 14 — BMI.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 14 — BMI.java</h2>
+      <p class="muted">Computes Body Mass Index from weight and height.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class BMI {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -645,14 +604,13 @@ public class BMI {
     System.out.println(bmi);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 15 — CarLoan.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 15 — CarLoan.java</h2>
-        <p class="muted">Monthly payment for fixed-rate car loan.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 15 — CarLoan.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 15 — CarLoan.java</h2>
+      <p class="muted">Monthly payment for fixed-rate car loan.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class CarLoan {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -665,14 +623,13 @@ public class CarLoan {
     System.out.println(payment);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 16 — Trig.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 16 — Trig.java</h2>
-        <p class="muted">Evaluates basic trig functions and their inverses for a given degree input.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 16 — Trig.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 16 — Trig.java</h2>
+      <p class="muted">Evaluates basic trig functions and their inverses for a given degree input.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class Trig {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -686,14 +643,13 @@ public class Trig {
     System.out.println("atan(tan) = " + Math.toDegrees(Math.atan(Math.tan(rad))));
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 17 — Barycenter.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 17 — Barycenter.java</h2>
-        <p class="muted">Distance r1 from mass m1 to the system barycenter for a two-body system.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- Princeton Web Exercise 17 — Barycenter.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 17 — Barycenter.java</h2>
+      <p class="muted">Distance r1 from mass m1 to the system barycenter for a two-body system.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class Barycenter {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -704,15 +660,14 @@ public class Barycenter {
     System.out.println(r1);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- Princeton Web Exercise 18 — GuessTheBiggerStrategy.java -->
-      <div class="card">
-        <h2>Princeton Web Exercise 18 — GuessTheBiggerStrategy.java</h2>
-        <p class="muted">Threshold-based strategy simulation: see one number, decide to keep or switch.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
+    <!-- Princeton Web Exercise 18 — GuessTheBiggerStrategy.java -->
+    <div class="card">
+      <h2>Princeton Web Exercise 18 — GuessTheBiggerStrategy.java</h2>
+      <p class="muted">Threshold-based strategy simulation: see one number, decide to keep or switch.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 import java.util.Random;
-
 public class GuessTheBiggerStrategy {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -734,15 +689,13 @@ public class GuessTheBiggerStrategy {
     System.out.printf("Win rate ≈ %.2f%%%n", rate);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- ===================== ADDED SECTION FROM LATEST ===================== -->
-
-      <div class="card">
-        <h2>Princeton Web Exercise 2 — GradeInRange.java</h2>
-        <p class="muted">Reads an int grade and checks if 90 ≤ grade ≤ 100 using a chained comparison fix.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <!-- ===================== ADDED SECTION FROM LATEST ===================== -->
+    <div class="card">
+      <h2>Princeton Web Exercise 2 — GradeInRange.java</h2>
+      <p class="muted">Reads an int grade and checks if 90 ≤ grade ≤ 100 using a chained comparison fix.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class GradeInRange {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -751,54 +704,54 @@ public class GradeInRange {
     System.out.println(isA);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 6 — CastDemo.java</h2>
-        <p class="muted">Shows integer division vs. proper floating‑point division.</p>
-        <div class="code"><pre><code>public class CastDemo {
+    <div class="card">
+      <h2>Princeton Web Exercise 6 — CastDemo.java</h2>
+      <p class="muted">Shows integer division vs. proper floating-point division.</p>
+      <div class="code"><pre><code>public class CastDemo {
   public static void main(String[] args) {
-    double x1 = (double) (3 / 5);   // integer division first → 0.0
-    double x2 = 3 / 5.0;            // correct: 0.6
+    double x1 = (double) (3 / 5); // integer division first → 0.0
+    double x2 = 3 / 5.0;          // correct: 0.6
     System.out.println(x1);
     System.out.println(x2);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 7 — IntOverflow.java</h2>
-        <p class="muted">Demonstrates overflow when multiplying ints before widening to long.</p>
-        <div class="code"><pre><code>public class IntOverflow {
+    <div class="card">
+      <h2>Princeton Web Exercise 7 — IntOverflow.java</h2>
+      <p class="muted">Demonstrates overflow when multiplying ints before widening to long.</p>
+      <div class="code"><pre><code>public class IntOverflow {
   public static void main(String[] args) {
     int x = 65536;
-    long wrong = x * x;          // int*int overflows before widening
+    long wrong = x * x;       // int*int overflows before widening
     long correct = (long) x * x; // widen first, then multiply in long
     System.out.println(wrong);
     System.out.println(correct);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 8 — SqrtEquality.java</h2>
-        <p class="muted">Floating‑point quirks: sqrt(2)*sqrt(2) vs 2.</p>
-        <div class="code"><pre><code>public class SqrtEquality {
+    <div class="card">
+      <h2>Princeton Web Exercise 8 — SqrtEquality.java</h2>
+      <p class="muted">Floating-point quirks: sqrt(2)*sqrt(2) vs 2.</p>
+      <div class="code"><pre><code>public class SqrtEquality {
   public static void main(String[] args) {
     boolean eq = (Math.sqrt(2) * Math.sqrt(2) == 2);
     System.out.println(eq);
     System.out.println(Math.sqrt(2) * Math.sqrt(2)); // show tiny rounding error
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 14 — LeapYear.java</h2>
-        <p class="muted">Determines if a given year is a leap year. (This version uses command‑line args.)</p>
-        <div class="code"><pre><code>public class LeapYear {
+    <div class="card">
+      <h2>Princeton Web Exercise 14 — LeapYear.java</h2>
+      <p class="muted">Determines if a given year is a leap year. (This version uses command-line args.)</p>
+      <div class="code"><pre><code>public class LeapYear {
   public static void main(String[] args) {
     if (args.length != 1) {
-      System.out.println("Usage: java LeapYear <year>");
+      System.out.println("Usage: java LeapYear &lt;year&gt;");
       return;
     }
     try {
@@ -810,84 +763,79 @@ public class GradeInRange {
     }
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 15 — CompileError_ThreeLiteral.java <span class="muted">(intended to FAIL)</span></h2>
-        <p class="muted">Demonstrates a compile‑time type error.</p>
-        <div class="code"><pre><code>public class CompileError_ThreeLiteral {
+    <div class="card">
+      <h2>Princeton Web Exercise 15 — CompileError_ThreeLiteral.java <span class="muted">(intended to FAIL)</span></h2>
+      <p class="muted">Demonstrates a compile-time type error.</p>
+      <div class="code"><pre><code>public class CompileError_ThreeLiteral {
   public static void main(String[] args) {
     int a = 27 * "three"; // compile-time error: bad operand types
     System.out.println(a);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Working variant — MultiplyParsed.java</h2>
-        <p class="muted">Compiles and runs: parse "3" to an int before multiplying.</p>
-        <div class="code"><pre><code>public class MultiplyParsed {
+    <div class="card">
+      <h2>Working variant — MultiplyParsed.java</h2>
+      <p class="muted">Compiles and runs: parse "3" to an int before multiplying.</p>
+      <div class="code"><pre><code>public class MultiplyParsed {
   public static void main(String[] args) {
     int a = 27;
     int b = Integer.parseInt("3");
     System.out.println(a * b);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 16 — UninitializedLocal.java <span class="muted">(intended to FAIL)</span></h2>
-        <p class="muted">Shows compile error for using an uninitialized local variable.</p>
-        <div class="code"><pre><code>public class UninitializedLocal {
+    <div class="card">
+      <h2>Princeton Web Exercise 16 — UninitializedLocal.java <span class="muted">(intended to FAIL)</span></h2>
+      <p class="muted">Shows compile error for using an uninitialized local variable.</p>
+      <div class="code"><pre><code>public class UninitializedLocal {
   public static void main(String[] args) {
     double x;
     System.out.println(x); // compile-time error: variable x might not have been initialized
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 17 — DivisionMix.java</h2>
-        <p class="muted">Contrasts int/int, int/double, double/int, double/double.</p>
-        <div class="code"><pre><code>public class DivisionMix {
+    <div class="card">
+      <h2>Princeton Web Exercise 17 — DivisionMix.java</h2>
+      <p class="muted">Contrasts int/int, int/double, double/int, double/double.</p>
+      <div class="code"><pre><code>public class DivisionMix {
   public static void main(String[] args) {
     int threeInt = 3;
-    int fourInt  = 4;
+    int fourInt = 4;
     double threeDouble = 3.0;
-    double fourDouble  = 4.0;
-
+    double fourDouble = 4.0;
     System.out.println(threeInt / fourInt);
     System.out.println(threeInt / fourDouble);
     System.out.println(threeDouble / fourInt);
     System.out.println(threeDouble / fourDouble);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 24 — FahrenheitToCelsius.java</h2>
-        <p class="muted">Highlights the integer division pitfall in temperature conversion.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <div class="card">
+      <h2>Princeton Web Exercise 24 — FahrenheitToCelsius.java</h2>
+      <p class="muted">Highlights the integer division pitfall in temperature conversion.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class FahrenheitToCelsius {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     double F = scanner.nextDouble();
-
-    double wrong = (F - 32) * (5 / 9);     // integer division → 0
+    double wrong = (F - 32) * (5 / 9);   // integer division → 0
     double correct = (F - 32) * (5.0 / 9); // proper double arithmetic
-
     System.out.println(wrong);
     System.out.println(correct);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 25 — ExponentiationDemo.java</h2>
-        <p class="muted">Shows Math.pow vs. multiplication; warns that ^ is XOR.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <div class="card">
+      <h2>Princeton Web Exercise 25 — ExponentiationDemo.java</h2>
+      <p class="muted">Shows Math.pow vs. multiplication; warns that ^ is XOR.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class ExponentiationDemo {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -898,29 +846,26 @@ public class ExponentiationDemo {
     System.out.println(squaredByMul);
   }
 }
-
 // (If you write a ^ 2 with integers, that’s bitwise XOR, not exponentiation.)</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 26 — BooleanLiterals.java</h2>
-        <p class="muted">Legal vs illegal boolean literals.</p>
-        <div class="code"><pre><code>public class BooleanLiterals {
+    <div class="card">
+      <h2>Princeton Web Exercise 26 — BooleanLiterals.java</h2>
+      <p class="muted">Legal vs illegal boolean literals.</p>
+      <div class="code"><pre><code>public class BooleanLiterals {
   public static void main(String[] args) {
     boolean b = true; // legal
     System.out.println(b);
   }
 }
-
 // (If you purposely try these, they will FAIL to compile:
 // boolean b = 1; boolean b = "true"; boolean b = True;)</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 27 — MaxWithoutIf.java</h2>
-        <p class="muted">Computes max(a,b) using arithmetic/abs; no if.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <div class="card">
+      <h2>Princeton Web Exercise 27 — MaxWithoutIf.java</h2>
+      <p class="muted">Computes max(a,b) using arithmetic/abs; no if.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class MaxWithoutIf {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -930,56 +875,53 @@ public class MaxWithoutIf {
     System.out.println(max);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 28 — CubicDiscriminant.java</h2>
-        <p class="muted">Computes cubic discriminant Δ for x³ + b x² + c x + d.</p>
-        <div class="code"><pre><code>import java.util.Scanner;
-
+    <div class="card">
+      <h2>Princeton Web Exercise 28 — CubicDiscriminant.java</h2>
+      <p class="muted">Computes cubic discriminant Δ for x³ + b x² + c x + d.</p>
+      <div class="code"><pre><code>import java.util.Scanner;
 public class CubicDiscriminant {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     double b = scanner.nextDouble();
     double c = scanner.nextDouble();
     double d = scanner.nextDouble();
-
-    double disc = (b*b)*(c*c) - 4*Math.pow(c, 3) - 4*Math.pow(b, 3)*d
-                  - 27*Math.pow(d, 2) + 18*b*c*d;
+    double disc = (b*b)*(c*c) - 4*Math.pow(c, 3) - 4*Math.pow(b, 3)*d - 27*Math.pow(d, 2) + 18*b*c*d;
     System.out.println(disc);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Princeton Web Exercise 30 — PoisonParentheses.java <span class="muted">(intended to FAIL)</span></h2>
-        <p class="muted">Shows why -(2147483648) is illegal as an int literal.</p>
-        <div class="code"><pre><code>public class PoisonParentheses {
+    <div class="card">
+      <h2>Princeton Web Exercise 30 — PoisonParentheses.java <span class="muted">(intended to FAIL)</span></h2>
+      <p class="muted">Shows why -(2147483648) is illegal as an int literal.</p>
+      <div class="code"><pre><code>public class PoisonParentheses {
   public static void main(String[] args) {
     int x = -(2147483648); // compile-time error: integer number too large
     System.out.println(x);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2>Working variant — PoisonParenthesesFixed.java</h2>
-        <p class="muted">Correct ways to express Integer.MIN_VALUE or negate a long literal.</p>
-        <div class="code"><pre><code>public class PoisonParenthesesFixed {
+    <div class="card">
+      <h2>Working variant — PoisonParenthesesFixed.java</h2>
+      <p class="muted">Correct ways to express Integer.MIN_VALUE or negate a long literal.</p>
+      <div class="code"><pre><code>public class PoisonParenthesesFixed {
   public static void main(String[] args) {
-    int ok = -2147483648;         // valid: MIN_VALUE as unary minus of literal
+    int ok = -2147483648;      // valid: MIN_VALUE as unary minus of literal
     long alsoOk = -(2147483648L); // long literal, then unary minus
     System.out.println(ok);
     System.out.println(alsoOk);
   }
 }</code></pre></div>
-      </div>
+    </div>
 
-      <!-- NEW: Turtle & Car project card -->
-      <div class="card">
-        <h2>Project — Turtle &amp; Car (Java)</h2>
-        <p class="muted">Simple OOP demo with two classes (<code>Turtle</code> and <code>Car</code>) and a runner.</p>
-        <div class="code"><pre><code>// ThingsRunner.java
+    <!-- NEW: Turtle & Car project card -->
+    <div class="card">
+      <h2>Project — Turtle &amp; Car (Java)</h2>
+      <p class="muted">Simple OOP demo with two classes (<code>Turtle</code> and <code>Car</code>) and a runner.</p>
+      <div class="code"><pre><code>// ThingsRunner.java
 public class ThingsRunner {
   public static void main(String[] args) {
     Turtle turtle1 = new Turtle(15, 18, 0, 0, "Doruk");
@@ -1006,9 +948,16 @@ public class ThingsRunner {
 
 // Turtle.java
 public class Turtle {
-  private double width, height, xPos, yPos; private String name;
+  private double width, height, xPos, yPos;
+  private String name;
+
   public Turtle(double width,double height,double xPos,double yPos,String name){
-    this.width=width; this.height=height; this.xPos=xPos; this.yPos=yPos; this.name=name; }
+    this.width=width;
+    this.height=height;
+    this.xPos=xPos;
+    this.yPos=yPos;
+    this.name=name;
+  }
   public void Forward(){ xPos += 1; }
   public void Forward(int pixels){ xPos += pixels; }
   public void backward(int pixels){ xPos -= pixels; }
@@ -1016,25 +965,50 @@ public class Turtle {
   public void setWidth(double w){ width=w; }
   public void setHeight(double h){ height=h; }
   public void printOut(){ System.out.println(toString()); }
-  public String toString(){ return "Turtle{"+"name='"+name+'\''+", width="+width+", height="+height+", xPos="+xPos+", yPos="+yPos+'}'; }
+  public String toString(){
+    return "Turtle{"+"name='"+name+'\''
+      +", width="+width+", height="+height+", xPos="+xPos+", yPos="+yPos+'}';
+  }
 }
 
 // Car.java
 public class Car {
-  private String model; private double width,height,kmDriven,acceleration; private boolean doorOpen;
+  private String model;
+  private double width,height,kmDriven,acceleration;
+  private boolean doorOpen;
+
   public Car(String model,double width,double height,double kmDriven,double acceleration){
-    this.model=model; this.width=width; this.height=height; this.kmDriven=kmDriven; this.acceleration=acceleration; this.doorOpen=false; }
+    this.model=model;
+    this.width=width;
+    this.height=height;
+    this.kmDriven=kmDriven;
+    this.acceleration=acceleration;
+    this.doorOpen=false;
+  }
   public void drive(double distance){ kmDriven += distance; }
   public void setWidth(double w){ width = w; }
   public void setHeight(double h){ height = h; }
   public void openDoor(){ doorOpen = true; }
   public void closeDoor(){ doorOpen = false; }
-  public void printOut(){ System.out.println("Car{"+"model='"+model+'\''+", width="+width+", height="+height+", kmDriven="+kmDriven+", acceleration="+acceleration+", doorOpen="+doorOpen+'}'); }
-}
-</code></pre></div>
-      </div>
-
+  public void printOut(){
+    System.out.println("Car{"
+      +"model='"+model+'\''
+      +", width="+width
+      +", height="+height
+      +", kmDriven="+kmDriven
+      +", acceleration="+acceleration
+      +", doorOpen="+doorOpen+'}');
+  }
+}</code></pre></div>
     </div>
-  </main>
+
+  </div> <!-- end .grid -->
+
+  <!-- EK: Click here for more butonu -->
+  <div class="card center" style="margin-top:20px">
+    <a href="projects2.html" class="cta">Click here for more →</a>
+  </div>
+
+</main>
 </body>
 </html>
