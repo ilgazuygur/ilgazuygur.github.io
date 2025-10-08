@@ -24,6 +24,7 @@
     ul{margin:0 0 0 1rem}
     code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:8px}
     pre{background:rgba(255,255,255,.06);padding:12px;border-radius:12px;overflow:auto}
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
@@ -380,7 +381,7 @@
   <!-- ===================== NEW: CLASS NOTES (APPENDED AT THE END) ===================== -->
   <div class="card">
     <h2>Class Notes — Java &amp; String Hızlı Rehber (alt alta satırlar)</h2>
-    <p class="muted">Sık kullanılan satırlar (I/O, Math, değişkenler) ve String metodları — **tek tek satırlar** halinde.</p>
+    <p class="muted">Sık kullanılan satırlar (I/O, Math, değişkenler) ve String metodları — <strong>tek tek satırlar</strong> halinde.</p>
 
     <h3>Java Satırları</h3>
     <pre><code>System.out.println("Hello");
@@ -423,7 +424,7 @@ String low = "OK".toLowerCase();</code></pre>
   <!-- ===================== UNIT 2 (ADDED AT THE VERY END) ===================== -->
   <div class="card">
     <h2>Unit 2 — Selection &amp; Repetition</h2>
-    <p class="muted">Short, full-English summary of 2.1–2.3</p>
+    <p class="muted">Short, full-English summary of 2.1–2.6</p>
 
     <h3>2.1 Algorithms with Selection and Repetition</h3>
     <ul>
@@ -454,6 +455,56 @@ String low = "OK".toLowerCase();</code></pre>
     <ul>
       <li>Executes only the first true condition; chain or nest for complex logic.</li>
     </ul>
+
+    <h3>2.4 Nested <code>if</code> Statements</h3>
+    <ul>
+      <li>Place an <code>if</code> inside another <code>if</code> to make multi-level decisions (e.g., first by day, then by age).</li>
+      <li><strong>Readability tip:</strong> prefer <em>else-if ladders</em> when branches are mutually exclusive; use nesting when the inner test only matters after an outer test is true.</li>
+      <li><strong>Binding rule:</strong> an <code>else</code> pairs with the <em>closest unmatched</em> <code>if</code>. Use braces to avoid ambiguity.</li>
+    </ul>
+    <pre><code>// Example: school lunch price
+if (isStudent) {
+  if (hasID) {
+    price = 5.0;
+  } else {
+    price = 6.5;
+  }
+} else {
+  price = 8.0;
+}</code></pre>
+
+    <h3>2.5 Compound Boolean Expressions</h3>
+    <ul>
+      <li>Combine conditions with <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT).</li>
+      <li><strong>Short-circuiting:</strong> <code>A &amp;&amp; B</code> skips <code>B</code> if <code>A</code> is false; <code>A || B</code> skips <code>B</code> if <code>A</code> is true. Useful to avoid errors (e.g., check bounds before indexing).</li>
+      <li><strong>Precedence:</strong> <code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>||</code>. Always add parentheses for clarity.</li>
+      <li><strong>Ranges:</strong> use <code>&amp;&amp;</code> for "between": <code>if (0 &lt;= x &amp;&amp; x &lt; 10)</code>.</li>
+      <li><strong>De Morgan's laws:</strong> <code>!(A || B) == !A &amp;&amp; !B</code>, <code>!(A &amp;&amp; B) == !A || !B</code>.</li>
+    </ul>
+    <pre><code>// Safe check with short-circuit
+if (i &gt;= 0 &amp;&amp; i &lt; arr.length &amp;&amp; arr[i] != null) {
+  use(arr[i]);
+}</code></pre>
+
+    <h3>2.6 Comparing Boolean Expressions</h3>
+    <ul>
+      <li>Two different expressions can be <em>logically equivalent</em> (always same truth value).</li>
+      <li>Common equivalences:
+        <ul>
+          <li><code>!(A || B)</code> ≡ <code>!A &amp;&amp; !B</code> (De Morgan)</li>
+          <li><code>!(A &amp;&amp; B)</code> ≡ <code>!A || !B</code></li>
+          <li><code>A &amp;&amp; (B || C)</code> ≡ <code>(A &amp;&amp; B) || (A &amp;&amp; C)</code> (distribution)</li>
+          <li><code>A ^ B</code> (XOR) is true when exactly one is true</li>
+        </ul>
+      </li>
+      <li><strong>Style:</strong> prefer the clearest form; avoid double negatives like <code>!(x &lt;= 5)</code> → write <code>x &gt; 5</code>.</li>
+      <li><strong>Performance &amp; safety:</strong> keep cheaper/safer checks first to benefit from short-circuiting.</li>
+    </ul>
+    <pre><code>// Equivalent but clearer rewrite
+// Original:
+if (!(age &lt; 13 || age &gt; 18)) teen = true;
+// Better:
+if (age &gt;= 13 &amp;&amp; age &lt;= 18) teen = true;</code></pre>
   </div>
   <!-- ===================== END UNIT 2 ===================== -->
 
