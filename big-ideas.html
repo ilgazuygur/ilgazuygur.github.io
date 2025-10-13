@@ -537,6 +537,200 @@ if (age &gt;= 13 &amp;&amp; age &lt;= 18) teen = true;</code></pre>
   </div>
   <!-- ===================== END 2.7–2.9 ===================== -->
 
+  <!-- ===================== RUNESTONE NOTES (APPENDED) ===================== -->
+  <div class="card">
+    <h2>Runestone Notes — Unit 2 (2.1–2.13, 2.20)</h2>
+
+    <h3>2.1.5 Summary</h3>
+    <ul>
+      <li>(AP 2.1.A.1) The building blocks of algorithms include sequencing, selection, and repetition.</li>
+      <li>(AP 2.1.A.2) Algorithms can contain selection (decision making) and repetition (looping).</li>
+      <li>(AP 2.1.A.3) Selection occurs when a choice of how execution proceeds is based on a true/false decision.</li>
+      <li>(AP 2.1.A.4) Repetition is when a process repeats until a desired outcome is reached.</li>
+      <li>(AP 2.1.A.5) The order of sequencing, selection, and repetition contributes to the algorithm’s outcome.</li>
+    </ul>
+
+    <h3>2.2.5 Summary</h3>
+    <ul>
+      <li>(AP 2.2.A.1) Values or expressions can be compared using <code>==</code> and <code>!=</code>. With primitive types this compares values; with reference types this compares object references.</li>
+      <li>(AP 2.2.A.2) Numeric values can be compared using <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>.</li>
+      <li>(AP 2.2.A.3) Relational expressions evaluate to <code>boolean</code> results: <code>true</code> or <code>false</code>.</li>
+      <li>The remainder operator <code>%</code> can test divisibility, e.g., <code>num % 2 == 0</code> checks for even.</li>
+    </ul>
+
+    <h3>2.3.6 Summary</h3>
+    <ul>
+      <li>(AP 2.3.A.1) Selection statements change sequential execution.</li>
+      <li>(AP 2.3.A.2) An <code>if</code> executes different code segments based on a Boolean expression.</li>
+      <li>(AP 2.3.A.3) One-way selection runs a body only when the condition is <code>true</code>.</li>
+      <li><span class="muted">if statements test a boolean expression and if it is true, execute the following statement or block.</span></li>
+    </ul>
+
+    <h3>2.4.4 Summary</h3>
+    <ul>
+      <li>(AP 2.4.A.1) Nested <code>if</code> statements place <code>if</code>/<code>if-else</code>/<code>if-else-if</code> inside each other.</li>
+      <li>(AP 2.4.A.2) The inner Boolean expression is evaluated only if the outer condition is <code>true</code>.</li>
+      <li>(AP 2.4.A.3) Multi-way selection (<code>if-else-if</code>) executes at most one matching branch; an optional trailing <code>else</code> runs if none match.</li>
+    </ul>
+
+    <h3>2.5.5 Summary</h3>
+    <ul>
+      <li>(AP 2.5.A.1) Logical operators <code>!</code> (not), <code>&amp;&amp;</code> (and), <code>||</code> (or) operate on Booleans.</li>
+      <li><code>A &amp;&amp; B</code> is true only if both are true. <code>A || B</code> is true if either (or both) is true. <code>!A</code> flips A.</li>
+      <li>(AP 2.5.A.1) Precedence: <code>!</code> &gt; <code>&amp;&amp;</code> &gt; <code>||</code> (parentheses clarify intent).</li>
+      <li>(AP 2.5.A.1) Logical expressions evaluate to <code>boolean</code>.</li>
+      <li>(AP 2.5.A.2) Short-circuiting: in <code>||</code> if the first is true, skip the second; in <code>&amp;&amp;</code> if the first is false, skip the second.</li>
+    </ul>
+
+    <h3>2.6.9 Summary</h3>
+    <ul>
+      <li>(AP 2.6.A.1) Two Boolean expressions are equivalent if they match for all cases; truth tables can prove equivalence.</li>
+      <li>(AP 2.6.A.2) De Morgan’s Laws:
+        <ul>
+          <li><code>!(a &amp;&amp; b)</code> ≡ <code>!a || !b</code></li>
+          <li><code>!(a || b)</code> ≡ <code>!a &amp;&amp; !b</code></li>
+        </ul>
+      </li>
+      <li>Negated relational simplifications:
+        <ul>
+          <li><code>!(c == d)</code> ≡ <code>c != d</code>; <code>!(c != d)</code> ≡ <code>c == d</code></li>
+          <li><code>!(c &lt; d)</code> ≡ <code>c &gt;= d</code>; <code>!(c &gt; d)</code> ≡ <code>c &lt;= d</code></li>
+          <li><code>!(c &lt;= d)</code> ≡ <code>c &gt; d</code>; <code>!(c &gt;= d)</code> ≡ <code>c &lt; d</code></li>
+        </ul>
+      </li>
+      <li>(AP 2.6.B.1) Two variables can reference the same object; <code>==</code>/<code>!=</code> compare references (aliases compare equal).</li>
+      <li>(AP 2.6.B.2) Compare an object reference with <code>null</code> using <code>==</code> or <code>!=</code>.</li>
+      <li>(AP 2.6.B.3) Classes often define <code>equals</code> to specify object equivalence via attributes.</li>
+    </ul>
+
+    <h3>2.7.6 Summary</h3>
+    <ul>
+      <li>(AP 2.7.A.1) Iteration repeats a segment while a Boolean condition is <code>true</code>.</li>
+      <li>(AP 2.7.B.1) <code>while</code> evaluates the condition before each iteration.</li>
+    </ul>
+    <pre><code>// Runs zero or more times
+int count = 0; // initialize
+while (count &lt; 10) { // test
+    // body
+    count++;        // update
+}</code></pre>
+    <ul>
+      <li>Typical loop pattern: Initialize → Test → Update.</li>
+      <li>(AP 2.7.A.2) Infinite loop: condition never becomes false.</li>
+      <li>(AP 2.7.A.3) If initial test is false, body doesn’t run.</li>
+      <li>(AP 2.7.A.4) Off-by-one errors: loop runs one too many/few times.</li>
+      <li><span class="muted">Input-controlled (sentinel) loops (e.g., <code>-1</code>, "bye") are useful though not on AP exam.</span></li>
+    </ul>
+
+    <h3>2.8.4 Summary</h3>
+    <ul>
+      <li>(AP 2.8.A.1) A <code>for</code> loop header has initialization, Boolean test, and update.</li>
+      <li>(AP 2.8.A.2) Initialization runs once; then test → body → update cycles until test is false.</li>
+      <li>(AP 2.8.A.3) <code>for</code> and <code>while</code> are inter-convertible.</li>
+    </ul>
+
+    <h3>2.9.9 Summary</h3>
+    <ul>
+      <li>(AP 2.9.1) Standard loop/selection algorithms:
+        <ul>
+          <li>Compute sum/average</li>
+          <li>Determine min/max</li>
+          <li>Check divisibility of integers</li>
+          <li>Extract digits of an integer</li>
+          <li>Count frequency meeting a criterion</li>
+        </ul>
+      </li>
+      <li>Accumulator pattern: store/update a running value inside a loop.</li>
+      <li>Common pattern: <code>if</code> inside loop to test each value (e.g., track min/max).</li>
+    </ul>
+
+    <h3>2.10.4 Summary</h3>
+    <ul>
+      <li>Loops can traverse/process a <code>String</code>.</li>
+      <li>(AP 2.10.A.1) Standard string algorithms:
+        <ul>
+          <li>Find substrings with a property</li>
+          <li>Count substrings meeting criteria</li>
+          <li>Create a reversed string</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2.11.3 Summary</h3>
+    <ul>
+      <li>Nested iteration: a loop inside another loop.</li>
+      <li>The inner loop completes all iterations before the outer loop continues.</li>
+    </ul>
+
+    <h3>2.12.4 Summary</h3>
+    <ul>
+      <li>(AP 2.12.A.1) Statement execution counts measure how many times a statement runs; computed by tracing/analyzing loops.</li>
+      <li>Trace tables track variables across iterations.</li>
+      <li>For simple counters: executions ≈ <code>largestValue - smallestValue + 1</code>.</li>
+      <li>Nested loops: total ≈ outer count × inner count.</li>
+      <li>Non-rectangular loops: use <code>n(n+1)/2</code> for triangular counts.</li>
+    </ul>
+    <p class="muted">2.12.5 Loop Analysis Game</p>
+
+    <h3>2.13 — Unit 2 Part 1: Selection (2.1–2.6)</h3>
+    <p>Conditionals execute code when a Boolean expression is true or false (e.g., <code>x &gt; 0</code>).</p>
+
+    <h4>2.13.1 Concept Summary</h4>
+    <ul>
+      <li>Block of statements — one or more statements in <code>{ }</code>.</li>
+      <li>Boolean expression — evaluates to true/false.</li>
+      <li>Compound Boolean — multiple conditions joined by <code>&amp;&amp;</code> / <code>||</code>.</li>
+      <li>Conditional — executes only if a Boolean is true.</li>
+      <li>De Morgan’s Laws — distribution of negation on complex conditionals.</li>
+      <li>Logical AND / OR — truth rules for combined conditions.</li>
+      <li>Negation — flips a truth value.</li>
+      <li>Short-circuit evaluation — skip evaluating the second condition when first determines result.</li>
+    </ul>
+
+    <h4>2.13.2 Java Keyword Summary</h4>
+    <ul>
+      <li><code>if (Boolean)</code> — start a conditional; follow with a statement or block.</li>
+      <li><code>else</code> — runs when the preceding <code>if</code> condition was false.</li>
+      <li><code>else if (Boolean)</code> — adds additional mutually exclusive branches.</li>
+    </ul>
+
+    <h4>2.13.3 Vocabulary Practice</h4>
+    <p class="muted">Drag-N-Drop activities: csawesome2__vocabcond1, csawesome2__vocabcond2; Quizlet links for more practice.</p>
+
+    <h4>2.13.4 Common Mistakes</h4>
+    <ul>
+      <li>Using <code>=</code> instead of <code>==</code> in <code>if</code> tests.</li>
+      <li>Putting a stray semicolon after <code>if (test)</code>.</li>
+      <li>Using two separate <code>if</code>s instead of <code>if</code>/<code>else</code>.</li>
+      <li>Confusion with compound Booleans (<code>&amp;&amp;</code>, <code>||</code>) and inclusive-or semantics.</li>
+      <li>Negation pitfalls; apply De Morgan’s Laws.</li>
+      <li>Forgetting short-circuit behavior.</li>
+    </ul>
+
+    <h3>2.20 — Unit 2 Part 2: Loops (2.7–2.12)</h3>
+    <p>Loops repeat a statement or block inside <code>{ }</code>.</p>
+
+    <h4>2.20.1 Concept Summary</h4>
+    <ul>
+      <li>Body of a Loop — statement or block that can repeat (may run zero times).</li>
+      <li><strong>For Loop</strong> — header with initialization, condition, change (update).</li>
+      <li><strong>While Loop</strong> — repeats while a Boolean condition is true.</li>
+      <li>Infinite Loop — never-ending loop.</li>
+      <li>Nested Loop — one loop inside another.</li>
+      <li>Out of Bounds error — accessing past end of string/list in a loop.</li>
+      <li>Trace Code — write variable values as loop executes.</li>
+    </ul>
+
+    <h4>2.20.2 Java Keyword Summary</h4>
+    <ul>
+      <li><code>while</code> — starts a while loop</li>
+      <li><code>for</code> — starts a for (or for-each) loop</li>
+      <li><code>System.out.println(variable)</code> — useful for tracing and debugging</li>
+    </ul>
+  </div>
+  <!-- ===================== /RUNESTONE NOTES ===================== -->
+
 </main>
 </body>
 </html>
+
