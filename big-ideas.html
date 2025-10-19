@@ -25,6 +25,12 @@
     code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:8px}
     pre{background:rgba(255,255,255,.06);padding:12px;border-radius:12px;overflow:auto}
     .muted{color:var(--muted)}
+    /* Responsive video */
+    .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(124,196,255,.15);box-shadow:var(--shadow)}
+    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-actions{margin-top:10px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;background:rgba(124,196,255,.12);color:var(--text);border:1px solid rgba(124,196,255,.25)}
+    .btn:hover{background:rgba(124,196,255,.18)}
   </style>
 </head>
 <body>
@@ -44,6 +50,19 @@
   <div class="card">
     <h1>Big Ideas</h1>
     <p>Key notes from AP CSA Unit 1.1–1.20 (curated &amp; includes all provided summaries)</p>
+  </div>
+
+  <!-- NEW: Unit 1 & 2 video embed -->
+  <div class="card">
+    <h2>Unit 1 &amp; 2 — Video Explanation</h2>
+    <div class="video-wrap">
+      <!-- Google Drive preview embed -->
+      <iframe src="https://drive.google.com/file/d/1894m-fgpzc4pFaPJale1j1X_anbvD3-d/preview" allow="autoplay"></iframe>
+    </div>
+    <div class="video-actions">
+      <a class="btn" href="https://drive.google.com/file/d/1894m-fgpzc4pFaPJale1j1X_anbvD3-d/view?usp=sharing" target="_blank" rel="noopener">Open in Google Drive</a>
+    </div>
+    <p class="muted" style="margin-top:10px">If the video doesn’t load, use the “Open in Google Drive” button.</p>
   </div>
 
   <!-- Core 1.1–1.9 notes (kept concise) -->
@@ -694,19 +713,6 @@ while (count &lt; 10) { // test
       <li><code>else if (Boolean)</code> — adds additional mutually exclusive branches.</li>
     </ul>
 
-    <h4>2.13.3 Vocabulary Practice</h4>
-    <p class="muted">Drag-N-Drop activities: csawesome2__vocabcond1, csawesome2__vocabcond2; Quizlet links for more practice.</p>
-
-    <h4>2.13.4 Common Mistakes</h4>
-    <ul>
-      <li>Using <code>=</code> instead of <code>==</code> in <code>if</code> tests.</li>
-      <li>Putting a stray semicolon after <code>if (test)</code>.</li>
-      <li>Using two separate <code>if</code>s instead of <code>if</code>/<code>else</code>.</li>
-      <li>Confusion with compound Booleans (<code>&amp;&amp;</code>, <code>||</code>) and inclusive-or semantics.</li>
-      <li>Negation pitfalls; apply De Morgan’s Laws.</li>
-      <li>Forgetting short-circuit behavior.</li>
-    </ul>
-
     <h3>2.20 — Unit 2 Part 2: Loops (2.7–2.12)</h3>
     <p>Loops repeat a statement or block inside <code>{ }</code>.</p>
 
@@ -733,4 +739,3 @@ while (count &lt; 10) { // test
 </main>
 </body>
 </html>
-
