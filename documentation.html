@@ -78,6 +78,39 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
+    /* image cards */
+    figure{
+      margin:0;
+    }
+    .img-wrap{
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid rgba(124,196,255,.15);
+      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.02);
+    }
+    .img-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    figcaption{
+      color:var(--muted);
+      font-size:.95rem;
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .badge{
+      font-size:.8rem;
+      padding:.15rem .5rem;
+      border:1px solid rgba(124,196,255,.25);
+      border-radius:999px;
+      color:var(--accent);
+      background:rgba(124,196,255,.10);
+    }
   </style>
 </head>
 <body>
@@ -109,8 +142,43 @@
   <div class="card">
     <h2>Unit Summary Notes</h2>
     <p>Below is my Unit 1A Review PDF file:</p>
-    <iframe src="Kami%20Export%20-%20Ilgaz%20UYGUR%20-%20Unit%201A%20Review.pdf"></iframe>
+    <iframe src="Kami%20Export%20-%20Ilgaz%20UYGUR%20-%20Unit%201A%20Review.pdf" title="Unit 1A Review PDF"></iframe>
     <p><a href="Kami%20Export%20-%20Ilgaz%20UYGUR%20-%20Unit%201A%20Review.pdf" target="_blank">Open in new tab</a></p>
+  </div>
+
+  <!-- NEW: AP CSA Progress - Unit 2 -->
+  <div class="card">
+    <h2>AP CSA Progress — Unit 2</h2>
+    <figure>
+      <div class="img-wrap">
+        <!-- Put the image file in the same folder as this HTML -->
+        <img src="Screenshot%202025-10-21%20231608.png"
+             alt="AP CSA Unit 2 Selection and Iteration progress — 95% completed"
+             loading="lazy">
+      </div>
+      <figcaption>
+        <span class="badge">Unit 2</span>
+        Selection and Iteration — progress screenshot (95% completed).
+        <a href="Screenshot%202025-10-21%20231608.png" target="_blank">Open full size</a>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- NEW: AP CSA Progress - Unit 1 -->
+  <div class="card">
+    <h2>AP CSA Progress — Unit 1</h2>
+    <figure>
+      <div class="img-wrap">
+        <img src="Screenshot%202025-10-21%20231625.png"
+             alt="AP CSA Unit 1 Using Objects and Methods progress — 100% completed"
+             loading="lazy">
+      </div>
+      <figcaption>
+        <span class="badge">Unit 1</span>
+        Using Objects and Methods — progress screenshot (100% completed).
+        <a href="Screenshot%202025-10-21%20231625.png" target="_blank">Open full size</a>
+      </figcaption>
+    </figure>
   </div>
 </main>
 </body>
