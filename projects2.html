@@ -29,21 +29,78 @@
       color:var(--text);
       line-height:1.6;
     }
-    a{color:var(--accent);text-decoration:none}a:hover{opacity:.9}
-    header{position:sticky;top:0;background:rgba(11,13,16,.65);backdrop-filter:blur(10px);border-bottom:1px solid rgba(124,196,255,.15)}
-    .nav{max-width:var(--maxw);margin:auto;display:flex;gap:20px;align-items:center;padding:14px 20px}
-    .brand{font-weight:700}.spacer{flex:1}
-    .tabs a{padding:8px 12px;border-radius:10px;color:var(--text)}
-    .tabs a:hover,.tabs a.active{background:rgba(124,196,255,.12)}
-    main{max-width:var(--maxw);margin:auto;padding:24px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(124,196,255,.15);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
-    .grid{display:grid;grid-template-columns:1fr;gap:20px}
-    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-    .code{background:rgba(0,0,0,.45);border:1px solid rgba(124,196,255,.18);border-radius:14px;padding:16px;overflow:auto}
-    pre{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:14px;line-height:1.5;color:#e9f1fb;white-space:pre}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.9}
+    header{
+      position:sticky;
+      top:0;
+      background:rgba(11,13,16,.65);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(124,196,255,.15)
+    }
+    .nav{
+      max-width:var(--maxw);
+      margin:auto;
+      display:flex;
+      gap:20px;
+      align-items:center;
+      padding:14px 20px
+    }
+    .brand{font-weight:700}
+    .spacer{flex:1}
+    .tabs a{
+      padding:8px 12px;
+      border-radius:10px;
+      color:var(--text)
+    }
+    .tabs a:hover,
+    .tabs a.active{background:rgba(124,196,255,.12)}
+    main{
+      max-width:var(--maxw);
+      margin:auto;
+      padding:24px
+    }
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(124,196,255,.15);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:20px
+    }
+    @media(min-width:900px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    .code{
+      background:rgba(0,0,0,.45);
+      border:1px solid rgba(124,196,255,.18);
+      border-radius:14px;
+      padding:16px;
+      overflow:auto
+    }
+    pre{
+      margin:0;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:14px;
+      line-height:1.5;
+      color:#e9f1fb;
+      white-space:pre
+    }
     .muted{color:var(--muted)}
-    h1{margin-top:0}h2{margin:0 0 10px 0}
-    .cta{display:inline-block;margin-top:14px;padding:10px 14px;border-radius:12px;border:1px solid rgba(124,196,255,.35);background:rgba(124,196,255,.12)}
+    h1{margin-top:0}
+    h2{margin:0 0 10px 0}
+    .cta{
+      display:inline-block;
+      margin-top:14px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(124,196,255,.35);
+      background:rgba(124,196,255,.12)
+    }
     .center{display:flex;justify-content:center}
     .ref{margin-top:10px;font-size:.95rem}
   </style>
@@ -65,7 +122,11 @@
 <main>
   <div class="card">
     <h1>More Projects</h1>
-    <p class="muted">Continuation of my Java practice set and mini demos. Each project includes the working version, a short reflection on why the handwritten one failed, and a link to its image.</p>
+    <p class="muted">
+      Continuation of my Java practice set and mini demos. This page mixes my own practice
+      programs with selected creative exercises from the Princeton Java book.
+      Each project includes the working version and (when relevant) a short reflection.
+    </p>
   </div>
 
   <div class="grid" style="margin-top:20px">
@@ -79,12 +140,17 @@
 public class MyProgram {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    String word = scanner.nextLine().replaceAll(",", "").replaceAll(" ", "").toUpperCase();
+    String word = scanner.nextLine()
+                         .replaceAll(",", "")
+                         .replaceAll(" ", "")
+                         .toUpperCase();
+
     int p1 = scanner.nextInt();
     int p2 = scanner.nextInt();
     int p3 = scanner.nextInt();
     int p4 = scanner.nextInt();
     int p5 = scanner.nextInt();
+
     System.out.println(scoreWord(word, p1));
     System.out.println(scoreWord(word, p2));
     System.out.println(scoreWord(word, p3));
@@ -96,19 +162,21 @@ public class MyProgram {
     int total = 0;
     boolean wordMultiplied = false;
     int multiplier = 1;
+
     for (int i = 0; i &lt; 4; i++) {
       int pos = start + i;
-      char c = word.charAt(i);
+      char c = word.charAt(pos);
       int score = letterScore(c);
+
       if (pos % 3 == 0 &amp;&amp; (pos / 3) % 2 == 1) {
-        score *= 2;
+        score *= 2;           // double letter
       } else if (pos % 5 == 0) {
-        score *= 3;
+        score *= 3;           // triple letter
       } else if (pos % 7 == 0 &amp;&amp; !wordMultiplied) {
-        multiplier *= 2;
+        multiplier *= 2;      // double word
         wordMultiplied = true;
       } else if (pos % 8 == 0 &amp;&amp; !wordMultiplied) {
-        multiplier *= 3;
+        multiplier *= 3;      // triple word
         wordMultiplied = true;
       }
       total += score;
@@ -125,7 +193,7 @@ public class MyProgram {
     return 0;
   }
 }</code></pre></div>
-      <p class="ref"><strong>Reflection:</strong> The original used <code>charAt(i)</code> instead of <code>charAt(start + i)</code>, which misaligned the score logic. Escaped HTML characters like <code>&lt;</code> and <code>&amp;</code> were also needed for display.</p>
+      <p class="ref"><strong>Reflection:</strong> The handwritten version used <code>charAt(i)</code> instead of <code>charAt(start + i)</code>, so the scoring squares didn't line up with the intended board positions.</p>
     </div>
 
     <!-- Turtle & Car -->
@@ -162,53 +230,90 @@ public class Turtle {
   private double width, height, xPos, yPos;
   private String name;
 
-  public Turtle(double width,double height,double xPos,double yPos,String name){
-    this.width=width; this.height=height; this.xPos=xPos; this.yPos=yPos; this.name=name;
+  public Turtle(double width, double height, double xPos, double yPos, String name) {
+    this.width = width;
+    this.height = height;
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.name = name;
   }
-  public void Forward(){ xPos += 1; }
-  public void Forward(int pixels){ xPos += pixels; }
-  public void backward(int pixels){ xPos -= pixels; }
-  public void moveTo(int x,int y){ xPos=x; yPos=y; }
-  public void setWidth(double w){ width=w; }
-  public void setHeight(double h){ height=h; }
-  public void printOut(){ System.out.println(toString()); }
-  public String toString(){
-    return "Turtle{"+"name='"+name+"', width="+width+", height="+height+", xPos="+xPos+", yPos="+yPos+'}';
+
+  public void Forward()       { xPos += 1; }
+  public void Forward(int px) { xPos += px; }
+  public void backward(int px){ xPos -= px; }
+  public void moveTo(int x,int y){ xPos = x; yPos = y; }
+  public void setWidth(double w){ width = w; }
+  public void setHeight(double h){ height = h; }
+
+  public void printOut() {
+    System.out.println(toString());
+  }
+
+  public String toString() {
+    return "Turtle{" +
+           "name='" + name + '\'' +
+           ", width=" + width +
+           ", height=" + height +
+           ", xPos=" + xPos +
+           ", yPos=" + yPos +
+           '}';
   }
 }
 
 // Car.java
 public class Car {
-  private String model; private double width,height,kmDriven,acceleration; private boolean doorOpen;
-  public Car(String model,double width,double height,double kmDriven,double acceleration){
-    this.model=model; this.width=width; this.height=height; this.kmDriven=kmDriven; this.acceleration=acceleration; this.doorOpen=false;
+  private String model;
+  private double width, height, kmDriven, acceleration;
+  private boolean doorOpen;
+
+  public Car(String model, double width, double height,
+             double kmDriven, double acceleration) {
+    this.model = model;
+    this.width = width;
+    this.height = height;
+    this.kmDriven = kmDriven;
+    this.acceleration = acceleration;
+    this.doorOpen = false;
   }
+
   public void drive(double distance){ kmDriven += distance; }
   public void setWidth(double w){ width = w; }
   public void setHeight(double h){ height = h; }
   public void openDoor(){ doorOpen = true; }
   public void closeDoor(){ doorOpen = false; }
-  public void printOut(){
-    System.out.println("Car{"+"model='"+model+"', width="+width+", height="+height+", kmDriven="+kmDriven+", acceleration="+acceleration+", doorOpen="+doorOpen+'}');
+
+  public void printOut() {
+    System.out.println("Car{" +
+                       "model='" + model + '\'' +
+                       ", width=" + width +
+                       ", height=" + height +
+                       ", kmDriven=" + kmDriven +
+                       ", acceleration=" + acceleration +
+                       ", doorOpen=" + doorOpen +
+                       '}');
   }
 }</code></pre></div>
-      <p class="ref"><strong>Reflection:</strong> Method naming inconsistencies (capitalization like <code>Forward</code>) and missing <code>println/toString</code> made it hard to track output in the initial handwritten version.</p>
+      <p class="ref"><strong>Reflection:</strong> In the handwritten draft, inconsistent method names and missing <code>toString()</code> made it hard to inspect the state. This version standardizes printing and encapsulates the fields.</p>
     </div>
 
     <!-- Leap Year + Loops -->
     <div class="card">
       <h2>Project — Leap Year &amp; Loops</h2>
+      <p class="muted">Checks if a given year is a leap year, then prints a line of <code>*</code> characters using a <code>for</code> loop.</p>
       <div class="code"><pre><code>import java.util.Scanner;
 
 public class LoopsAndLeap {
   public static void main(String[] args) {
     int year = 2024;
     if (isLeap(year)) System.out.println(year + " is a leap year.");
-    else System.out.println(year + " is not a leap year.");
+    else              System.out.println(year + " is not a leap year.");
 
     Scanner scanner = new Scanner(System.in);
     int a = scanner.nextInt();
-    for (int i = 0; i &lt;= a; i++) System.out.print("*");
+
+    for (int i = 0; i &lt;= a; i++) {
+      System.out.print("*");
+    }
   }
 
   public static boolean isLeap(int year) {
@@ -217,13 +322,14 @@ public class LoopsAndLeap {
     return year % 4 == 0;
   }
 }</code></pre></div>
-      <p class="ref"><strong>Reflection:</strong> The handwritten version had <code>=</code> instead of <code>==</code>, wrong parentheses in conditions, and <code>Scanner</code> syntax issues. Fixed logical and formatting errors.</p>
+      <p class="ref"><strong>Reflection:</strong> The pen-and-paper version used <code>=</code> instead of <code>==</code> and had mismatched parentheses. Fixing the boolean logic made the leap year rule correct.</p>
       <p><a href="WhatsApp Image 2025-10-06 at 17.57.34_62a60ef6.jpg" target="_blank">Click to view image</a></p>
     </div>
 
     <!-- Palindrome -->
     <div class="card">
       <h2>Project — Palindrome Checker</h2>
+      <p class="muted">Reads an integer and checks whether its decimal representation is a palindrome.</p>
       <div class="code"><pre><code>import java.util.Scanner;
 
 public class PalindromeCheck {
@@ -240,13 +346,14 @@ public class PalindromeCheck {
     }
   }
 }</code></pre></div>
-      <p class="ref"><strong>Reflection:</strong> The handwritten attempt used <code>[]</code> for negative indices and <code>==</code> instead of <code>equals()</code>. Also had <code>System,in</code> typo.</p>
+      <p class="ref"><strong>Reflection:</strong> The original draft tried to index from the end with negative indices and used <code>==</code> for strings. Java needs <code>equals()</code> for content comparison.</p>
       <p><a href="WhatsApp Image 2025-10-06 at 17.57.34_18fed28f.jpg" target="_blank">Click to view image</a></p>
     </div>
 
     <!-- Comparison & Binary -->
     <div class="card">
       <h2>Project — Comparison &amp; Binary Converter</h2>
+      <p class="muted">First compares three integers, then converts a 4-bit binary string to decimal.</p>
       <div class="code"><pre><code>import java.util.Scanner;
 
 public class CompareAndBinary {
@@ -256,9 +363,11 @@ public class CompareAndBinary {
     int a = scanner.nextInt();
     int b = scanner.nextInt();
     int c = scanner.nextInt();
+
     if (a != 0 || b != 0 || c != 0) {
       System.out.println("Values are not zero, continue.");
     }
+
     if (b != 0 &amp;&amp; c != 0 &amp;&amp; (a / b) == (b / c)) {
       System.out.println("All are equal.");
     }
@@ -266,20 +375,610 @@ public class CompareAndBinary {
     System.out.print("Enter a 4-bit binary number: ");
     String s = scanner.next();
     int total = 0;
+
     if (s.length() == 4) {
-      char b3 = s.charAt(0), b2 = s.charAt(1), b1 = s.charAt(2), b0 = s.charAt(3);
+      char b3 = s.charAt(0);
+      char b2 = s.charAt(1);
+      char b1 = s.charAt(2);
+      char b0 = s.charAt(3);
+
       if (b3 == '1') total += 8;
       if (b2 == '1') total += 4;
       if (b1 == '1') total += 2;
       if (b0 == '1') total += 1;
+
       System.out.println("Decimal value: " + total);
     } else {
       System.out.println("Please enter exactly 4 bits (e.g. 1010).");
     }
   }
 }</code></pre></div>
-      <p class="ref"><strong>Reflection:</strong> Logical operator mix-ups, wrong character comparisons, and symbols like ± caused syntax errors in the original version.</p>
+      <p class="ref"><strong>Reflection:</strong> In the handwritten version, wrong logical operators and strange symbols (like &plusmn;) broke compilation. Using clear <code>&amp;&amp;</code>, <code>==</code> and explicit bit weights fixed it.</p>
       <p><a href="WhatsApp Image 2025-10-06 at 17.57.34_9833fbed.jpg" target="_blank">Click to view image</a></p>
+    </div>
+
+    <!-- NEW PROJECTS FROM HOMEWORK LIST (15 SELECTED) -->
+
+    <!-- DayOfWeek with switch -->
+    <div class="card">
+      <h2>Creative Exercise — DayOfWeek (Switch Version)</h2>
+      <p class="muted">
+        Rewrite of the classic Zeller’s congruence exercise: prints
+        <em>Sunday, Monday, ...</em> instead of an int 0–6 using a <code>switch</code>.
+      </p>
+      <div class="code"><pre><code>import java.util.Scanner;
+
+public class DayOfWeekSwitch {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Please enter the day:");
+    int day = scanner.nextInt();
+    System.out.println("Please enter the month:");
+    int month = scanner.nextInt();
+    System.out.println("Please enter the year:");
+    int year = scanner.nextInt();
+
+    int y0 = year - (14 - month) / 12;
+    int x  = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+    int m0 = month + 12 * ((14 - month) / 12) - 2;
+    int d0 = (day + x + (31 * m0) / 12) % 7;
+
+    String name;
+    switch (d0) {
+      case 0:  name = "Sunday";    break;
+      case 1:  name = "Monday";    break;
+      case 2:  name = "Tuesday";   break;
+      case 3:  name = "Wednesday"; break;
+      case 4:  name = "Thursday";  break;
+      case 5:  name = "Friday";    break;
+      case 6:  name = "Saturday";  break;
+      default: name = "Unknown";   break;
+    }
+
+    System.out.println("Day of week: " + name);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- GymnasticsScorer -->
+    <div class="card">
+      <h2>Creative Exercise — GymnasticsScorer.java</h2>
+      <p class="muted">
+        Reads 6 judge scores, discards the highest and lowest, and averages the remaining 4.
+      </p>
+      <div class="code"><pre><code>import java.util.Scanner;
+
+public class GymnasticsScorer {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    double[] scores = new double[6];
+
+    for (int i = 0; i &lt; 6; i++) {
+      scores[i] = scanner.nextDouble();
+    }
+
+    double min = scores[0];
+    double max = scores[0];
+    double sum = 0.0;
+
+    for (int i = 0; i &lt; 6; i++) {
+      if (scores[i] &lt; min) min = scores[i];
+      if (scores[i] &gt; max) max = scores[i];
+      sum += scores[i];
+    }
+
+    double finalSum = sum - min - max;
+    double average = finalSum / 4.0;
+    System.out.println("Final score = " + average);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- QuarterbackRating -->
+    <div class="card">
+      <h2>Creative Exercise — QuarterbackRating.java</h2>
+      <p class="muted">
+        Implements the NFL quarterback rating formula with proper clamping of intermediate values.
+      </p>
+      <div class="code"><pre><code>public class QuarterbackRating {
+  private static double clamp(double v) {
+    double hi = 475.0 / 12.0;
+    if (v &lt; 0.0) return 0.0;
+    if (v &gt; hi) return hi;
+    return v;
+  }
+
+  public static void main(String[] args) {
+    if (args.length != 5) {
+      System.out.println("Usage: java QuarterbackRating A B C D E");
+      return;
+    }
+
+    double A = Double.parseDouble(args[0]); // completions
+    double B = Double.parseDouble(args[1]); // attempts
+    double C = Double.parseDouble(args[2]); // yards
+    double D = Double.parseDouble(args[3]); // touchdowns
+    double E = Double.parseDouble(args[4]); // interceptions
+
+    double W = (250.0 / 3.0) * (A / B - 0.3);
+    double X = (25.0  / 6.0) * (C / B - 3.0);
+    double Y = (1000.0 / 3.0) * (D / B);
+    double Z = (1250.0 / 3.0) * (0.095 - E / B);
+
+    W = clamp(W);
+    X = clamp(X);
+    Y = clamp(Y);
+    Z = clamp(Z);
+
+    double rating = (W + X + Y + Z) / 6.0;
+    System.out.println("QB rating = " + rating);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- DecimalExpansion -->
+    <div class="card">
+      <h2>Creative Exercise — DecimalExpansion.java</h2>
+      <p class="muted">
+        Prints the decimal expansion of <code>p / q</code>, marking the repeating cycle in parentheses.
+      </p>
+      <div class="code"><pre><code>import java.util.HashMap;
+
+public class DecimalExpansion {
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.out.println("Usage: java DecimalExpansion p q");
+      return;
+    }
+
+    long p = Long.parseLong(args[0]);
+    long q = Long.parseLong(args[1]);
+
+    if (q == 0) {
+      System.out.println("undefined (division by zero)");
+      return;
+    }
+
+    StringBuilder sb = new StringBuilder();
+    boolean negative = (p &lt; 0) ^ (q &lt; 0);
+    long num = Math.abs(p);
+    long den = Math.abs(q);
+
+    if (negative &amp;&amp; num != 0) sb.append('-');
+
+    long integerPart = num / den;
+    sb.append(integerPart);
+    long remainder = num % den;
+
+    if (remainder == 0) {
+      sb.append(".0");
+      System.out.println(sb.toString());
+      return;
+    }
+
+    sb.append('.');
+    StringBuilder frac = new StringBuilder();
+    HashMap&lt;Long, Integer&gt; seen = new HashMap&lt;&gt;();
+    int repeatIndex = -1;
+
+    while (remainder != 0) {
+      if (seen.containsKey(remainder)) {
+        repeatIndex = seen.get(remainder);
+        break;
+      }
+      seen.put(remainder, frac.length());
+      remainder *= 10;
+      long digit = remainder / den;
+      remainder %= den;
+      frac.append(digit);
+    }
+
+    if (repeatIndex == -1) {
+      sb.append(frac);
+    } else {
+      sb.append(frac.substring(0, repeatIndex));
+      sb.append('(');
+      sb.append(frac.substring(repeatIndex));
+      sb.append(')');
+    }
+
+    System.out.println(sb.toString());
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- NPerLine 10-99 -->
+    <div class="card">
+      <h2>Creative Exercise — NPerLine.java (10–99)</h2>
+      <p class="muted">
+        Prints the integers from 10 to 99 with <code>n</code> integers per line (command-line argument).
+      </p>
+      <div class="code"><pre><code>public class NPerLine {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java NPerLine n");
+      return;
+    }
+
+    int n = Integer.parseInt(args[0]);
+    int count = 0;
+
+    for (int i = 10; i &lt;= 99; i++) {
+      System.out.print(i + " ");
+      count++;
+      if (count % n == 0) {
+        System.out.println();
+      }
+    }
+
+    if (count % n != 0) {
+      System.out.println();
+    }
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- NPerLine 1-1000 aligned -->
+    <div class="card">
+      <h2>Creative Exercise — NPerLine2.java (1–1000, Aligned)</h2>
+      <p class="muted">
+        Prints 1–1000 with <code>n</code> integers per line, aligning the numbers in columns.
+      </p>
+      <div class="code"><pre><code>public class NPerLine2 {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java NPerLine2 n");
+      return;
+    }
+
+    int n = Integer.parseInt(args[0]);
+    int count = 0;
+
+    for (int i = 1; i &lt;= 1000; i++) {
+      System.out.printf("%4d", i);
+      count++;
+
+      if (count % n == 0) {
+        System.out.println();
+      }
+    }
+
+    if (count % n != 0) {
+      System.out.println();
+    }
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Making change -->
+    <div class="card">
+      <h2>Creative Exercise — MakingChange.java</h2>
+      <p class="muted">
+        Uses the greedy algorithm to make change for <code>N</code> pennies using US coins.
+      </p>
+      <div class="code"><pre><code>public class MakingChange {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java MakingChange N");
+      return;
+    }
+
+    int N = Integer.parseInt(args[0]);
+
+    int quarters = N / 25;
+    N %= 25;
+    int dimes = N / 10;
+    N %= 10;
+    int nickels = N / 5;
+    N %= 5;
+    int pennies = N;
+
+    System.out.println(quarters + " quarters");
+    System.out.println(dimes + " dimes");
+    System.out.println(nickels + " nickels");
+    System.out.println(pennies + " pennies");
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Season -->
+    <div class="card">
+      <h2>Creative Exercise — Season.java</h2>
+      <p class="muted">
+        Prints the season in the northern hemisphere for a given month and day.
+      </p>
+      <div class="code"><pre><code>public class Season {
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.out.println("Usage: java Season M D");
+      return;
+    }
+
+    int M = Integer.parseInt(args[0]);
+    int D = Integer.parseInt(args[1]);
+    String season;
+
+    // Spring: March 21 – June 20
+    if ((M == 3 &amp;&amp; D &gt;= 21) ||
+        (M &gt;  3 &amp;&amp; M &lt;  6)  ||
+        (M == 6 &amp;&amp; D &lt;= 20)) {
+      season = "Spring";
+    }
+    // Summer: June 21 – September 22
+    else if ((M == 6 &amp;&amp; D &gt;= 21) ||
+             (M &gt;  6 &amp;&amp; M &lt;  9)  ||
+             (M == 9 &amp;&amp; D &lt;= 22)) {
+      season = "Summer";
+    }
+    // Fall: September 23 – December 21
+    else if ((M == 9  &amp;&amp; D &gt;= 23) ||
+             (M &gt;  9  &amp;&amp; M &lt; 12)  ||
+             (M == 12 &amp;&amp; D &lt;= 21)) {
+      season = "Fall";
+    }
+    // Winter: December 22 – March 20
+    else {
+      season = "Winter";
+    }
+
+    System.out.println(season);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Zodiac -->
+    <div class="card">
+      <h2>Creative Exercise — Zodiac.java</h2>
+      <p class="muted">
+        Prints the Zodiac sign corresponding to a given month and day.
+      </p>
+      <div class="code"><pre><code>public class Zodiac {
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.out.println("Usage: java Zodiac M D");
+      return;
+    }
+
+    int M = Integer.parseInt(args[0]);
+    int D = Integer.parseInt(args[1]);
+    String sign;
+
+    if      ((M == 12 &amp;&amp; D &gt;= 22) || (M ==  1 &amp;&amp; D &lt;= 19)) sign = "Capricorn";
+    else if ((M ==  1 &amp;&amp; D &gt;= 20) || (M ==  2 &amp;&amp; D &lt;= 17)) sign = "Aquarius";
+    else if ((M ==  2 &amp;&amp; D &gt;= 18) || (M ==  3 &amp;&amp; D &lt;= 19)) sign = "Pisces";
+    else if ((M ==  3 &amp;&amp; D &gt;= 20) || (M ==  4 &amp;&amp; D &lt;= 19)) sign = "Aries";
+    else if ((M ==  4 &amp;&amp; D &gt;= 20) || (M ==  5 &amp;&amp; D &lt;= 20)) sign = "Taurus";
+    else if ((M ==  5 &amp;&amp; D &gt;= 21) || (M ==  6 &amp;&amp; D &lt;= 20)) sign = "Gemini";
+    else if ((M ==  6 &amp;&amp; D &gt;= 21) || (M ==  7 &amp;&amp; D &lt;= 22)) sign = "Cancer";
+    else if ((M ==  7 &amp;&amp; D &gt;= 23) || (M ==  8 &amp;&amp; D &lt;= 22)) sign = "Leo";
+    else if ((M ==  8 &amp;&amp; D &gt;= 23) || (M ==  9 &amp;&amp; D &lt;= 22)) sign = "Virgo";
+    else if ((M ==  9 &amp;&amp; D &gt;= 23) || (M == 10 &amp;&amp; D &lt;= 22)) sign = "Libra";
+    else if ((M == 10 &amp;&amp; D &gt;= 23) || (M == 11 &amp;&amp; D &lt;= 21)) sign = "Scorpio";
+    else if ((M == 11 &amp;&amp; D &gt;= 22) || (M == 12 &amp;&amp; D &lt;= 21)) sign = "Sagittarius";
+    else sign = "Unknown";
+
+    System.out.println(sign);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Muay Thai weight classes -->
+    <div class="card">
+      <h2>Creative Exercise — MuayThaiWeightClass.java</h2>
+      <p class="muted">
+        Reads a kickboxer’s weight in pounds and prints their Muay Thai weight class.
+      </p>
+      <div class="code"><pre><code>public class MuayThaiWeightClass {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java MuayThaiWeightClass weight");
+      return;
+    }
+
+    int w = Integer.parseInt(args[0]);
+    int code;
+
+    if      (w &lt; 112)           code = 0;
+    else if (w &lt;= 115)          code = 1;
+    else if (w &lt;= 118)          code = 2;
+    else if (w &lt;= 122)          code = 3;
+    else if (w &lt;= 126)          code = 4;
+    else if (w &lt;= 130)          code = 5;
+    else if (w &lt;= 135)          code = 6;
+    else if (w &lt;= 140)          code = 7;
+    else if (w &lt;= 147)          code = 8;
+    else if (w &lt;= 154)          code = 9;
+    else if (w &lt;= 160)          code = 10;
+    else if (w &lt;= 167)          code = 11;
+    else if (w &lt;= 175)          code = 12;
+    else if (w &lt;= 183)          code = 13;
+    else if (w &lt;= 190)          code = 14;
+    else if (w &lt;= 220)          code = 15;
+    else                        code = 16;
+
+    String klass;
+    switch (code) {
+      case 0:  klass = "Flyweight";             break;
+      case 1:  klass = "Super flyweight";       break;
+      case 2:  klass = "Bantamweight";          break;
+      case 3:  klass = "Super bantamweight";    break;
+      case 4:  klass = "Featherweight";         break;
+      case 5:  klass = "Super featherweight";   break;
+      case 6:  klass = "Lightweight";           break;
+      case 7:  klass = "Super lightweight";     break;
+      case 8:  klass = "Welterweight";          break;
+      case 9:  klass = "Super welterweight";    break;
+      case 10: klass = "Middleweight";          break;
+      case 11: klass = "Super middleweight";    break;
+      case 12: klass = "Light heavyweight";     break;
+      case 13: klass = "Super light heavyweight"; break;
+      case 14: klass = "Cruiserweight";         break;
+      case 15: klass = "Heavyweight";           break;
+      default: klass = "Super heavyweight";     break;
+    }
+
+    System.out.println(klass);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- ISBN2 -->
+    <div class="card">
+      <h2>Creative Exercise — ISBN2.java</h2>
+      <p class="muted">
+        Reads a 9-digit code, computes the ISBN-10 check digit, and prints the formatted ISBN.
+      </p>
+      <div class="code"><pre><code>public class ISBN2 {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java ISBN2 9digitcode");
+      return;
+    }
+
+    String s = args[0];
+    if (s.length() != 9) {
+      System.out.println("Input must be 9 digits.");
+      return;
+    }
+
+    int sum = 0;
+    for (int i = 0; i &lt; 9; i++) {
+      int digit = s.charAt(i) - '0';
+      sum += (i + 1) * digit;
+    }
+
+    int check = (11 - (sum % 11)) % 11;
+    char checkChar = (check == 10) ? 'X' : (char)('0' + check);
+
+    String part1 = s.substring(0, 1);
+    String part2 = s.substring(1, 4);
+    String part3 = s.substring(4, 9);
+
+    System.out.println(part1 + "-" + part2 + "-" + part3 + "-" + checkChar);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- UPC -->
+    <div class="card">
+      <h2>Creative Exercise — UPC.java</h2>
+      <p class="muted">
+        Reads an 11-digit UPC prefix and computes the 12th check digit according to the standard rule.
+      </p>
+      <div class="code"><pre><code>public class UPC {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java UPC 11digitcode");
+      return;
+    }
+
+    String s = args[0];
+    if (s.length() != 11) {
+      System.out.println("Input must be 11 digits.");
+      return;
+    }
+
+    int sumOdd = 0;
+    int sumEven = 0;
+
+    for (int i = 0; i &lt; 11; i++) {
+      int digit = s.charAt(i) - '0';
+      if ((i + 1) % 2 == 1) sumOdd += digit;
+      else                  sumEven += digit;
+    }
+
+    int total = sumOdd * 3 + sumEven;
+    int check = (10 - (total % 10)) % 10;
+
+    System.out.println("Full UPC: " + s + check);
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Triangle pattern -->
+    <div class="card">
+      <h2>Creative Exercise — Triangle.java</h2>
+      <p class="muted">
+        Prints an <code>N</code>-by-<code>N</code> triangular pattern of <code>*</code> and <code>.</code>.
+      </p>
+      <div class="code"><pre><code>public class Triangle {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java Triangle N");
+      return;
+    }
+
+    int N = Integer.parseInt(args[0]);
+
+    for (int i = 0; i &lt; N; i++) {
+      for (int j = 0; j &lt; N; j++) {
+        if (j &lt; i) System.out.print(". ");
+        else       System.out.print("* ");
+      }
+      System.out.println();
+    }
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Ex pattern -->
+    <div class="card">
+      <h2>Creative Exercise — Ex.java</h2>
+      <p class="muted">
+        Prints a <code>(2N + 1)</code>-by-<code>(2N + 1)</code> “X” pattern using two nested loops
+        and one <code>if-else</code> statement.
+      </p>
+      <div class="code"><pre><code>public class Ex {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java Ex N");
+      return;
+    }
+
+    int N = Integer.parseInt(args[0]);
+    int size = 2 * N + 1;
+
+    for (int i = 0; i &lt; size; i++) {
+      for (int j = 0; j &lt; size; j++) {
+        if (i == j || i + j == 2 * N) {
+          System.out.print("* ");
+        } else {
+          System.out.print(". ");
+        }
+      }
+      System.out.println();
+    }
+  }
+}</code></pre></div>
+    </div>
+
+    <!-- Diamond pattern -->
+    <div class="card">
+      <h2>Creative Exercise — Diamond.java</h2>
+      <p class="muted">
+        Prints a diamond pattern of size <code>2N + 1</code> by <code>2N + 1</code> using Manhattan distance.
+      </p>
+      <div class="code"><pre><code>public class Diamond {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java Diamond N");
+      return;
+    }
+
+    int N = Integer.parseInt(args[0]);
+
+    for (int i = -N; i &lt;= N; i++) {
+      for (int j = -N; j &lt;= N; j++) {
+        if (Math.abs(i) + Math.abs(j) &lt;= N) {
+          System.out.print("* ");
+        } else {
+          System.out.print(". ");
+        }
+      }
+      System.out.println();
+    }
+  }
+}</code></pre></div>
     </div>
 
   </div>
