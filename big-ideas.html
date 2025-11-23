@@ -736,6 +736,114 @@ while (count &lt; 10) { // test
   </div>
   <!-- ===================== /RUNESTONE NOTES ===================== -->
 
+  <!-- ===================== UNIT 3 (3.1–3.5) ===================== -->
+  <div class="card">
+    <h2>Unit 3 — Cortado (3.1–3.5)</h2>
+    <p class="muted">High-level design &amp; OOP structure: abstraction, impact of design, anatomy of a class, constructors, and how to write methods.</p>
+
+    <h3>3.1 — Abstraction and Program Design</h3>
+    <ul>
+      <li><strong>Abstraction:</strong> hide low-level details and expose only what the user needs (e.g., <code>Scanner</code> hides how input is read from the keyboard).</li>
+      <li><strong>Procedural abstraction:</strong> use methods as “black boxes” — you care about <em>what</em> they do, not <em>how</em> they do it internally.</li>
+      <li><strong>Object abstraction:</strong> design classes that model real-world or problem-world things with attributes and behaviors.</li>
+      <li><strong>Top-down design / decomposition:</strong> start from a big task → break into smaller sub-problems → write methods for each part.</li>
+      <li><strong>Good abstraction =</strong> small, focused methods; clear parameters and return types; internal details can change without breaking other code.</li>
+    </ul>
+
+    <h3>3.2 — Impact of Program Design</h3>
+    <ul>
+      <li><strong>Readability:</strong> good names for classes, methods, and variables make code easier to understand for humans (including “future you”).</li>
+      <li><strong>Maintainability:</strong> well-structured code (small methods, clear responsibility) is easier to fix, extend, and debug.</li>
+      <li><strong>Reusability:</strong> generic, well-designed methods and classes can be reused in other projects instead of rewriting logic.</li>
+      <li><strong>Collaboration:</strong> consistent style, comments, and APIs let multiple people work on the same code base.</li>
+      <li><strong>Testing:</strong> small, isolated methods are easier to test with different inputs and edge cases.</li>
+    </ul>
+
+    <h3>3.3 — Anatomy of a Class</h3>
+    <ul>
+      <li>Typical class skeleton:</li>
+    </ul>
+    <pre><code>public class Player {
+  // 1) Fields (instance variables)
+  private String name;
+  private int score;
+
+  // 2) Constructors
+  public Player(String name, int score) {
+    this.name = name;
+    this.score = score;
+  }
+
+  // 3) Methods (behaviors)
+  public void addPoints(int points) {
+    score += points;
+  }
+
+  public int getScore() {
+    return score;
+  }
+}</code></pre>
+    <ul>
+      <li><strong>Fields:</strong> store the state of each object (usually <code>private</code>).</li>
+      <li><strong>Constructors:</strong> special methods that run when you call <code>new</code> to create and initialize an object.</li>
+      <li><strong>Methods:</strong> actions the object can perform or questions you can ask about it.</li>
+      <li><strong>Access modifiers:</strong> <code>public</code> vs <code>private</code> control what can be used from outside the class (encapsulation).</li>
+    </ul>
+
+    <h3>3.4 — Constructors</h3>
+    <ul>
+      <li><strong>Purpose:</strong> set up a new object in a valid starting state.</li>
+      <li><strong>Rules:</strong>
+        <ul>
+          <li>Constructor name must exactly match the class name.</li>
+          <li>No return type (not even <code>void</code>).</li>
+        </ul>
+      </li>
+      <li><strong>Overloading:</strong> a class can have multiple constructors with different parameter lists (number/types/order).</li>
+      <li><strong>Using <code>this</code>:</strong> often used to distinguish fields from parameters (e.g., <code>this.health = health;</code>).</li>
+      <li><strong>Default / no-arg constructor:</strong> sets default values when no parameters are given.</li>
+    </ul>
+    <pre><code>public class Point {
+  private int x;
+  private int y;
+
+  // No-arg constructor
+  public Point() {
+    this(0, 0); // calls the other constructor
+  }
+
+  // Full constructor
+  public Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+}</code></pre>
+
+    <h3>3.5 — Methods: How to Write Them</h3>
+    <ul>
+      <li><strong>Method header:</strong> <code>accessModifier returnType methodName(parameterList)</code></li>
+    </ul>
+    <pre><code>public int add(int a, int b) {
+  int sum = a + b;     // local variable
+  return sum;          // return value
+}</code></pre>
+    <ul>
+      <li><strong>Parameters:</strong> input values the method needs; types and order must match the call.</li>
+      <li><strong>Return type:</strong> <code>void</code> if nothing is returned; otherwise type must match the <code>return</code> value.</li>
+      <li><strong>Side effects vs pure:</strong> some methods only compute and return a value, others also change fields (update object state).</li>
+      <li><strong>Preconditions:</strong> what must be true before the method is called (e.g., parameter is non-negative).</li>
+      <li><strong>Postconditions:</strong> what the method guarantees after it finishes (e.g., returned value is in a certain range, object fields updated).</li>
+      <li><strong>Good method design:</strong>
+        <ul>
+          <li>One clear job (“do one thing well”).</li>
+          <li>Descriptive name that starts with a verb for actions (<code>calculateTotal</code>, <code>printReport</code>).</li>
+          <li>Short body; if it becomes long, split into helper methods.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- ===================== END UNIT 3 ===================== -->
+
 </main>
 </body>
 </html>
