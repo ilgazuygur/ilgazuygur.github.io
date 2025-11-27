@@ -53,11 +53,145 @@
   <div class="card">
     <h1>Projects 3</h1>
     <p class="muted">
-      This page continues my Java projects with a simple football match simulator.
+      This page continues my Java projects with a shapes project called <strong>Otto</strong> and a simple football match simulator.
     </p>
   </div>
 
   <div class="grid" style="margin-top:20px">
+
+    <div class="card">
+      <h2>Project — Otto (Shapes in Java)</h2>
+      <p class="muted">
+        Otto is a Shapes class that can represent circles, squares and rectangles with radius, sides,
+        position and fill state. It also explores keeping a ratio between two sides.
+      </p>
+      <div class="code"><pre><code>public class Shapes {
+    
+    private double sides;
+    private double sides1;
+    private double radius;
+    private boolean isFilled;
+    private int xPos;
+    private int yPos;
+    private boolean keepRatio = false;
+    private double currentRatio;
+    
+    public Shapes(int radius1, boolean isFilled1, int xPos1, int yPos1) {
+        radius = radius1;
+        isFilled = isFilled1;
+        xPos = xPos1;
+        yPos = yPos1;
+    }
+    
+    public Shapes(double pSides, double pSides1, int xPos1, int yPos1, boolean isFilled1){
+        sides = pSides;
+        sides1 = pSides1;
+        xPos = xPos1;
+        yPos = yPos1;
+        isFilled = isFilled1;
+        
+        if (sides1 != 0) {
+            currentRatio = sides / sides1;
+        } else {
+            currentRatio = 0;
+        }
+    }
+    
+    public Shapes(double pSides, int xPos1, int yPos1, boolean isFilled1) {
+        sides = pSides;
+        xPos = xPos1;
+        yPos = yPos1;
+        isFilled = isFilled1;
+    }
+    
+    public double getRadius() {
+        System.out.println("The current radius is: " + radius);
+        return radius;
+    }
+    
+    public void setRadius(int x) {
+        radius = x;
+        System.out.println("New radius: " + radius);
+    }
+    
+    public double getSides() {
+        System.out.println("The current side1 is: " + sides);
+        return sides;
+    }
+    
+    public double getSides1() {
+        System.out.println("The current side is: " + sides1);
+        return sides1;
+    }
+    
+    public boolean getIsFilled() {
+        System.out.println("The current state is: " + isFilled);
+        return isFilled;
+    }
+    
+    public void setIsfilled(boolean y){
+        isFilled = y;
+        System.out.println("New fill state: " + isFilled);
+    }
+    
+    public int xGetPosition() {
+        System.out.println("The current x position is: " + xPos);
+        return xPos;
+    }
+    
+    public double yGetPosition() {
+        System.out.println("The current y position is: " + yPos);
+        return yPos;
+    }
+    
+    public void setPosition(int xx , int yy){
+        xPos = xx;
+        yPos = yy;
+        System.out.println("New position: (" + xPos + ", " + yPos + ")");
+    }
+    
+    public void sideChange(int zz) {
+        sides = zz;
+        System.out.println("New side1 value: " + sides);
+    }
+    
+    public void sideChange1(int zzz){
+        sides1 = zzz;
+        System.out.println("New side value: " + sides1);
+    }
+    
+    public void ratioSame(int x) {
+        double diff = Math.abs(sides - x);
+        sides = x;
+        if (currentRatio != 0) {
+            sides1 = sides - (diff * currentRatio);
+        }
+        System.out.println("New sides after ratioSame side1: " + sides + ", side2: " + sides1);
+    }
+}
+
+public class ShapesRunner
+{
+    public static void main(String[] args)
+    {
+        Shapes circle = new Shapes(5, true, 10, 10);
+        Shapes square = new Shapes(5.6, 10, 20, false);
+        Shapes rectangle = new Shapes(5.6, 7.3, 6, 9, true);
+        
+        circle.getRadius();
+        square.getSides();
+        rectangle.getSides();
+        rectangle.getSides1();
+        rectangle.ratioSame(10);
+    }
+}</code></pre></div>
+      <p class="muted">
+        Video explanation:
+        <a href="https://drive.google.com/file/d/1ETuifvrxGpmQIlRCseFL3cYPOJ9M4iv-/view?usp=sharing" target="_blank">
+          Click to watch Otto project video
+        </a>
+      </p>
+    </div>
 
     <div class="card">
       <h2>Project — Football Match (Java)</h2>
